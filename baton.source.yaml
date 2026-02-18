@@ -1,11 +1,40 @@
 name: "baton-dx-source"
 version: "0.1.0"
-description: "Baton source repository"
+description: "Official Baton DX source repository — profiles for maintainers, creators, and consumers of Baton DX"
+repository: "github:baton-dx/baton-dx-source"
+
+ai:
+  tools:
+    - claude-code
+    - cursor
+    - windsurf
+    - antigravity
+    - codex
+    - github-copilot
+    - opencode
+    - amp
+    - kiro
+    - zed
+    - cline
+    - roo
+    - junie
+    - trae
 
 profiles:
-  - name: "default"
-    path: "profiles/default"
-    description: "Default profile configuration"
+  - name: "base"
+    path: "profiles/base"
+    description: "Shared Baton DX knowledge foundation (extend this, do not install directly)"
+  - name: "maintainer"
+    path: "profiles/maintainer"
+    description: "For developers contributing to the baton-dx codebase"
+  - name: "creator"
+    path: "profiles/creator"
+    description: "For developers creating and managing Baton sources and profiles"
+  - name: "consumer"
+    path: "profiles/consumer"
+    description: "For developers using Baton to manage AI tool configs in their projects"
 
 metadata:
+  author: "baton-dx"
+  license: "MIT"
   created: "2026"

@@ -1,0 +1,67 @@
+name: "maintainer"
+version: "0.1.0"
+description: "For developers contributing to the baton-dx codebase — monorepo architecture, adapters, core logic, CLI, and release workflows."
+
+extends:
+  - ../base
+
+weight: 10
+
+ai:
+  tools:
+    - claude-code
+    - cursor
+    - windsurf
+    - antigravity
+    - codex
+    - github-copilot
+    - opencode
+    - amp
+    - kiro
+    - zed
+    - cline
+    - roo
+    - junie
+    - trae
+
+  skills:
+    - name: add-adapter
+      scope: project
+    - name: add-ide-platform
+      scope: project
+    - name: review-code
+      scope: project
+    - name: find-dead-code
+      scope: project
+    - name: find-redundancy
+      scope: project
+    - name: create-pr
+      scope: project
+    - name: run-release
+      scope: project
+    - name: run-review
+      scope: project
+
+  rules:
+    - general
+    - coding-style
+    - api-conventions
+
+  agents:
+    - name: code-quality-auditor
+      scope: project
+    - name: consolidation-scout
+      scope: project
+
+  memory:
+    - source: MEMORY.md
+      merge: "append"
+
+  commands:
+    - build
+    - quality
+    - verify
+
+variables:
+  monorepo_root: "."
+  bun_version: "latest"

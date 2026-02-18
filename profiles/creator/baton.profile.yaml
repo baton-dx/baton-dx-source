@@ -1,0 +1,56 @@
+name: "creator"
+version: "0.1.0"
+description: "For developers creating and managing Baton sources and profiles — authoring, publishing, and versioning DX configurations."
+
+extends:
+  - ../base
+
+weight: 10
+
+ai:
+  tools:
+    - claude-code
+    - cursor
+    - windsurf
+    - antigravity
+    - codex
+    - github-copilot
+    - opencode
+    - amp
+    - kiro
+    - zed
+    - cline
+    - roo
+    - junie
+    - trae
+
+  skills:
+    - name: create-source
+      scope: project
+    - name: create-profile
+      scope: project
+    - name: configure-tools
+      scope: project
+    - name: migrate-config
+      scope: project
+
+  rules:
+    - profile-conventions
+    - source-conventions
+
+  agents:
+    - name: profile-builder
+      scope: project
+    - name: source-manager
+      scope: project
+
+  memory:
+    - source: MEMORY.md
+      merge: "append"
+
+  commands:
+    - scaffold-profile
+    - validate
+
+variables:
+  default_transport: "github"

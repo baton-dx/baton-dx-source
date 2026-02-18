@@ -1,0 +1,51 @@
+name: "consumer"
+version: "0.1.0"
+description: "For developers using Baton to manage AI tool configurations in their projects — init, sync, update, and manage workflows."
+
+extends:
+  - ../base
+
+weight: 10
+
+ai:
+  tools:
+    - claude-code
+    - cursor
+    - windsurf
+    - antigravity
+    - codex
+    - github-copilot
+    - opencode
+    - amp
+    - kiro
+    - zed
+    - cline
+    - roo
+    - junie
+    - trae
+
+  skills:
+    - name: setup-project
+      scope: project
+    - name: troubleshoot-sync
+      scope: project
+    - name: update-profiles
+      scope: project
+
+  rules:
+    - project-conventions
+
+  agents:
+    - name: baton-assistant
+      scope: project
+
+  memory:
+    - source: MEMORY.md
+      merge: "append"
+
+  commands:
+    - sync
+    - status
+
+variables:
+  default_scope: "project"
