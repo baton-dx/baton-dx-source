@@ -1,0 +1,11 @@
+name: "baton-dx-source"
+version: "0.1.0"
+description: "Baton source repository"
+
+profiles:
+  - name: "default"
+    path: "profiles/default"
+    description: "Default profile configuration"
+
+metadata:
+  created: "2026"
