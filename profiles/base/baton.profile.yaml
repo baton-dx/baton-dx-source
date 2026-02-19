@@ -27,6 +27,11 @@ ai:
     - source: MEMORY.md
       merge: "append"
 
+files:
+  - source: files/.claude/settings.json
+    target: .claude/settings.json
+    merge: "deep"
+
 variables:
   baton_version: "0.1.0"
   baton_repo: "https://github.com/baton-dx/baton-dx"
