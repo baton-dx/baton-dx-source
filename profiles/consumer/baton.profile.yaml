@@ -36,8 +36,7 @@ ai:
     - project-conventions
 
   agents:
-    - name: baton-assistant
-      scope: project
+    - baton-assistant
 
   memory:
     - source: MEMORY.md

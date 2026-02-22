@@ -39,10 +39,8 @@ ai:
     - source-conventions
 
   agents:
-    - name: profile-builder
-      scope: project
-    - name: source-manager
-      scope: project
+    - profile-builder
+    - source-manager
 
   memory:
     - source: MEMORY.md

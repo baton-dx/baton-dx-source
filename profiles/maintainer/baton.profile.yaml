@@ -48,10 +48,8 @@ ai:
     - api-conventions
 
   agents:
-    - name: code-quality-auditor
-      scope: project
-    - name: consolidation-scout
-      scope: project
+    - code-quality-auditor
+    - consolidation-scout
 
   memory:
     - source: MEMORY.md
