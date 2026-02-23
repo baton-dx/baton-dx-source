@@ -1,167 +1,35 @@
-# Baton DX — Consumer Reference
+# Baton DX — Consumer Context
 
-## CLI Commands
+You are assisting a developer who uses Baton to manage AI tool configurations in their projects.
 
-### Project Commands
-
-#### `baton init`
-
-Initialize Baton in your project. Creates `baton.yaml`.
+## Essential Commands
 
 ```bash
-baton init
-baton init --profile github:org/repo/profile-name
-baton init --yes --force
+baton init                    # Initialize project (interactive)
+baton sync                    # Resolve and place all configs
+baton sync --dry-run          # Preview changes without writing
+baton apply                   # Deterministic sync from lockfile (for CI)
+baton diff                    # Compare local vs remote
+baton manage                  # Interactive profile management
+baton source connect <url>    # Register a source globally
 ```
-
-Flags: `--profile <source>` (skip source selection), `--force` (overwrite existing baton.yaml)
-
-#### `baton sync`
-
-Resolve, merge, transform, and place all configurations from your profiles.
-
-```bash
-baton sync
-baton sync --dry-run
-baton sync --verbose
-baton sync --category ai
-```
-
-Process: fetch sources → validate manifests → sort by weight → transform per tool → place files → update lockfile.
-
-Flags: `--category <type>` (filter: `ai`, `files`, or `ide`)
-
-#### `baton update` (deprecated)
-
-**Deprecated** — use `baton sync` instead. `baton update` bypasses the lockfile and fetches latest versions directly.
-
-```bash
-baton sync           # preferred
-baton update         # deprecated, bypasses lockfile
-```
-
-#### `baton apply`
-
-Deterministic lock-based sync. Applies exactly what is recorded in `baton.lock` without fetching or resolving sources.
-
-```bash
-baton apply
-baton apply --dry-run
-```
-
-Use `baton apply` in CI or when you want reproducible, offline config placement.
-
-#### `baton self-update`
-
-Update the baton CLI itself to the latest version.
-
-```bash
-baton self-update
-```
-
-#### `baton diff`
-
-Compare local files with remote source versions.
-
-```bash
-baton diff
-baton diff --name-only
-```
-
-Exit codes: 0 = no differences, 1 = differences detected.
-
-#### `baton manage`
-
-Interactive project management wizard. Add/remove profiles, change targets, modify variables.
-
-```bash
-baton manage
-```
-
-#### `baton config`
-
-Show dashboard or configure settings.
-
-```bash
-baton config              # dashboard
-baton config set <key> <value>  # set value
-```
-
-### AI Tools Commands
-
-#### `baton ai-tools scan`
-
-Detect installed AI tools. Prompts to save to `~/.baton/config.yaml`.
-
-#### `baton ai-tools list`
-
-List configured tools. Flags: `--all` (show all 14), `--json`.
-
-### IDE Commands
-
-#### `baton ides scan`
-
-Detect installed IDE platforms.
-
-#### `baton ides list`
-
-List configured IDEs. Flags: `--all`, `--json`.
-
-### Global Flags
-
-- `--help / -h` — show help
-- `--version / -v` — show version
-- `--yes / -y` — non-interactive mode
-- `--dry-run` — preview without writing
-- `--verbose` — debug logging
 
 ## Project Manifest (`baton.yaml`)
 
 ```yaml
 profiles:
-  - source: github:org/repo/frontend
-  - source: github:org/repo/backend
-  - source: file:../local/experimental
+  - source: github:org/repo/profile-name
 
 ai:
-  targets: [claude-code, cursor]   # limit which tools get configured
+  targets: [claude-code, cursor]   # optional: limit target tools
 
 variables:
-  project_name: "My App"
-
-overrides:
-  files:
-    .gitignore:
-      merge: skip
+  project_name: "My App"          # override profile variables
 ```
 
-## Lockfile (`baton.lock`)
+## Key Principles
 
-Records exact versions and commit hashes for reproducibility.
-
-- `baton sync` respects locked versions
-- `baton apply` uses lockfile deterministically (ideal for CI)
-- `baton update` (deprecated) bypasses lockfile, fetches latest
-- Always commit `baton.lock` to version control — do not gitignore it
-- Team members get identical configs via the lockfile
-
-## Multi-Profile Composition
-
-When multiple profiles are applied:
-
-1. Profiles sorted by `weight` (lowest first)
-2. Equal weight: order in `baton.yaml` wins
-3. Each profile layers on top of previous
-4. Project `overrides` applied last
-
-## Source References
-
-Profiles can come from different transports:
-
-| Transport | Format | Example |
-| --------- | ------------------------------------ | ----------------------------------------- |
-| GitHub | `github:org/repo/profile` | `github:my-org/dx-configs/frontend` |
-| GitHub (pinned) | `github:org/repo/profile@version` | `github:my-org/dx-configs/frontend@v1.0` |
-| GitLab | `gitlab:org/repo/profile` | `gitlab:team/configs/backend` |
-| npm | `npm:@org/package/profile` | `npm:@my-org/dx/frontend` |
-| Local | `file:path/to/profile` | `file:../my-source/profiles/frontend` |
+- Always run `baton sync --dry-run` before syncing
+- Always commit `baton.yaml` and `baton.lock` to version control
+- Use `baton apply` in CI for reproducible configs
+- Use `baton manage` to add/remove profiles interactively
