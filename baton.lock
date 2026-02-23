@@ -1,0 +1,214 @@
+locked_at: 2026-02-23T11:02:19.164Z
+packages:
+  base:
+    source: ../base
+    resolved: ../base
+    version: 0.1.0
+    sha: unknown
+    integrity:
+      CLAUDE.md:
+        hash: a23d77d9e3f9435183d88bd5c9ec571a75051896d15194355e793c12d339a8d1
+        tool: claude-code
+        category: ai
+      AGENTS.md:
+        hash: 3996f4ede09556c34e48840139649b852cc36ae7518267ff103ac03c8aa02205
+        tool: windsurf
+        category: ai
+      GEMINI.md:
+        hash: a23d77d9e3f9435183d88bd5c9ec571a75051896d15194355e793c12d339a8d1
+        tool: antigravity
+        category: ai
+      .github/copilot-instructions.md:
+        hash: a23d77d9e3f9435183d88bd5c9ec571a75051896d15194355e793c12d339a8d1
+        tool: github-copilot
+        category: ai
+  creator:
+    source: github:baton-dx/baton-dx-source/profiles/creator
+    resolved: github:baton-dx/baton-dx-source/profiles/creator
+    version: 0.1.0
+    sha: c23f94724f5483facff9ce10d5f60eaa3fb9c4a9
+    integrity:
+      .claude/skills/create-source:
+        hash: 63946d9d35c650eee0885dc7399c9d2b4241a589b9bb76a15b32a2e834c3fb68
+        tool: claude-code
+        category: ai
+      .claude/skills/create-profile:
+        hash: 7db295433b691002674bc23a08e2d1988d222284508cc00eb9a3f47808aa41f9
+        tool: claude-code
+        category: ai
+      .claude/skills/configure-tools:
+        hash: 8e5dbf355ee99a6a8b0df19516ff9f7a067f1b5eb23c9daa837d312582ea2ca5
+        tool: claude-code
+        category: ai
+      .claude/skills/migrate-config:
+        hash: 36ee100a3810ecf02f889a44d90b932e2a2f55b0c3db3ed21f4b6c3d36620f64
+        tool: claude-code
+        category: ai
+      .windsurf/skills/create-source:
+        hash: 63946d9d35c650eee0885dc7399c9d2b4241a589b9bb76a15b32a2e834c3fb68
+        tool: windsurf
+        category: ai
+      .windsurf/skills/create-profile:
+        hash: 7db295433b691002674bc23a08e2d1988d222284508cc00eb9a3f47808aa41f9
+        tool: windsurf
+        category: ai
+      .windsurf/skills/configure-tools:
+        hash: 8e5dbf355ee99a6a8b0df19516ff9f7a067f1b5eb23c9daa837d312582ea2ca5
+        tool: windsurf
+        category: ai
+      .windsurf/skills/migrate-config:
+        hash: 36ee100a3810ecf02f889a44d90b932e2a2f55b0c3db3ed21f4b6c3d36620f64
+        tool: windsurf
+        category: ai
+      .agent/skills/create-source:
+        hash: 63946d9d35c650eee0885dc7399c9d2b4241a589b9bb76a15b32a2e834c3fb68
+        tool: antigravity
+        category: ai
+      .agent/skills/create-profile:
+        hash: 7db295433b691002674bc23a08e2d1988d222284508cc00eb9a3f47808aa41f9
+        tool: antigravity
+        category: ai
+      .agent/skills/configure-tools:
+        hash: 8e5dbf355ee99a6a8b0df19516ff9f7a067f1b5eb23c9daa837d312582ea2ca5
+        tool: antigravity
+        category: ai
+      .agent/skills/migrate-config:
+        hash: 36ee100a3810ecf02f889a44d90b932e2a2f55b0c3db3ed21f4b6c3d36620f64
+        tool: antigravity
+        category: ai
+      .codex/skills/create-source:
+        hash: 63946d9d35c650eee0885dc7399c9d2b4241a589b9bb76a15b32a2e834c3fb68
+        tool: codex
+        category: ai
+      .codex/skills/create-profile:
+        hash: 7db295433b691002674bc23a08e2d1988d222284508cc00eb9a3f47808aa41f9
+        tool: codex
+        category: ai
+      .codex/skills/configure-tools:
+        hash: 8e5dbf355ee99a6a8b0df19516ff9f7a067f1b5eb23c9daa837d312582ea2ca5
+        tool: codex
+        category: ai
+      .codex/skills/migrate-config:
+        hash: 36ee100a3810ecf02f889a44d90b932e2a2f55b0c3db3ed21f4b6c3d36620f64
+        tool: codex
+        category: ai
+      .github/skills/create-source:
+        hash: 63946d9d35c650eee0885dc7399c9d2b4241a589b9bb76a15b32a2e834c3fb68
+        tool: github-copilot
+        category: ai
+      .github/skills/create-profile:
+        hash: 7db295433b691002674bc23a08e2d1988d222284508cc00eb9a3f47808aa41f9
+        tool: github-copilot
+        category: ai
+      .github/skills/configure-tools:
+        hash: 8e5dbf355ee99a6a8b0df19516ff9f7a067f1b5eb23c9daa837d312582ea2ca5
+        tool: github-copilot
+        category: ai
+      .github/skills/migrate-config:
+        hash: 36ee100a3810ecf02f889a44d90b932e2a2f55b0c3db3ed21f4b6c3d36620f64
+        tool: github-copilot
+        category: ai
+      .opencode/skills/create-source:
+        hash: 63946d9d35c650eee0885dc7399c9d2b4241a589b9bb76a15b32a2e834c3fb68
+        tool: opencode
+        category: ai
+      .opencode/skills/create-profile:
+        hash: 7db295433b691002674bc23a08e2d1988d222284508cc00eb9a3f47808aa41f9
+        tool: opencode
+        category: ai
+      .opencode/skills/configure-tools:
+        hash: 8e5dbf355ee99a6a8b0df19516ff9f7a067f1b5eb23c9daa837d312582ea2ca5
+        tool: opencode
+        category: ai
+      .opencode/skills/migrate-config:
+        hash: 36ee100a3810ecf02f889a44d90b932e2a2f55b0c3db3ed21f4b6c3d36620f64
+        tool: opencode
+        category: ai
+      .trae/skills/create-source:
+        hash: 63946d9d35c650eee0885dc7399c9d2b4241a589b9bb76a15b32a2e834c3fb68
+        tool: trae
+        category: ai
+      .trae/skills/create-profile:
+        hash: 7db295433b691002674bc23a08e2d1988d222284508cc00eb9a3f47808aa41f9
+        tool: trae
+        category: ai
+      .trae/skills/configure-tools:
+        hash: 8e5dbf355ee99a6a8b0df19516ff9f7a067f1b5eb23c9daa837d312582ea2ca5
+        tool: trae
+        category: ai
+      .trae/skills/migrate-config:
+        hash: 36ee100a3810ecf02f889a44d90b932e2a2f55b0c3db3ed21f4b6c3d36620f64
+        tool: trae
+        category: ai
+      CLAUDE.md:
+        hash: a23d77d9e3f9435183d88bd5c9ec571a75051896d15194355e793c12d339a8d1
+        tool: claude-code
+        category: ai
+      AGENTS.md:
+        hash: 3996f4ede09556c34e48840139649b852cc36ae7518267ff103ac03c8aa02205
+        tool: windsurf
+        category: ai
+      GEMINI.md:
+        hash: a23d77d9e3f9435183d88bd5c9ec571a75051896d15194355e793c12d339a8d1
+        tool: antigravity
+        category: ai
+      .github/copilot-instructions.md:
+        hash: a23d77d9e3f9435183d88bd5c9ec571a75051896d15194355e793c12d339a8d1
+        tool: github-copilot
+        category: ai
+      .claude/commands/scaffold-profile.md:
+        hash: 7d1a7832f4f38da69993aaa63ca183327f002b813c8c85b109339f56858fe307
+        tool: claude-code
+        category: ai
+      .claude/commands/validate.md:
+        hash: 4bd1f1b63414d77dc03b17b556b48c849e0a5fd7f190f7cd2e15b3908e326b90
+        tool: claude-code
+        category: ai
+      .windsurf/workflows/scaffold-profile.md:
+        hash: 7d1a7832f4f38da69993aaa63ca183327f002b813c8c85b109339f56858fe307
+        tool: windsurf
+        category: ai
+      .windsurf/workflows/validate.md:
+        hash: 4bd1f1b63414d77dc03b17b556b48c849e0a5fd7f190f7cd2e15b3908e326b90
+        tool: windsurf
+        category: ai
+      .agent/workflows/scaffold-profile.md:
+        hash: 7d1a7832f4f38da69993aaa63ca183327f002b813c8c85b109339f56858fe307
+        tool: antigravity
+        category: ai
+      .agent/workflows/validate.md:
+        hash: 4bd1f1b63414d77dc03b17b556b48c849e0a5fd7f190f7cd2e15b3908e326b90
+        tool: antigravity
+        category: ai
+      .codex/commands/scaffold-profile.md:
+        hash: 7d1a7832f4f38da69993aaa63ca183327f002b813c8c85b109339f56858fe307
+        tool: codex
+        category: ai
+      .codex/commands/validate.md:
+        hash: 4bd1f1b63414d77dc03b17b556b48c849e0a5fd7f190f7cd2e15b3908e326b90
+        tool: codex
+        category: ai
+      .github/copilot/commands/scaffold-profile.md:
+        hash: 7d1a7832f4f38da69993aaa63ca183327f002b813c8c85b109339f56858fe307
+        tool: github-copilot
+        category: ai
+      .github/copilot/commands/validate.md:
+        hash: 4bd1f1b63414d77dc03b17b556b48c849e0a5fd7f190f7cd2e15b3908e326b90
+        tool: github-copilot
+        category: ai
+      .opencode/commands/scaffold-profile.md:
+        hash: 7d1a7832f4f38da69993aaa63ca183327f002b813c8c85b109339f56858fe307
+        tool: opencode
+        category: ai
+      .opencode/commands/validate.md:
+        hash: 4bd1f1b63414d77dc03b17b556b48c849e0a5fd7f190f7cd2e15b3908e326b90
+        tool: opencode
+        category: ai
+      .trae/commands/scaffold-profile.md:
+        hash: 7d1a7832f4f38da69993aaa63ca183327f002b813c8c85b109339f56858fe307
+        tool: trae
+        category: ai
+      .trae/commands/validate.md:
+        hash: 4bd1f1b63414d77dc03b17b556b48c849e0a5fd7f190f7cd2e15b3908e326b90
+        tool: trae
+        category: ai
