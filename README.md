@@ -121,4 +121,4 @@ baton sync --dry-run
 - [Baton DX](https://github.com/baton-dx/baton-dx)
 - [Documentation](https://github.com/baton-dx/baton-dx/tree/main/docs)
 - [Creating Profiles](https://github.com/baton-dx/baton-dx/blob/main/docs/04-creating-profiles.md)
-- [Creating Sources](https://github.com/baton-dx/baton-dx/blob/main/docs/05-creating-sources.md)
+- [Creating Sources](https://github.com/baton-dx/baton-dx/blob/main/docs/03-creating-sources.md)
