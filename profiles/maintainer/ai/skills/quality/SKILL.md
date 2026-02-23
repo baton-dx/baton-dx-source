@@ -1,6 +1,7 @@
 ---
 name: quality
-description: Run all quality checks for the baton-dx monorepo
+description: Run all quality checks for the baton-dx monorepo. Use when the user wants to verify code quality across typecheck, lint, test, and dead-code checks.
+allowed-tools: Bash
 ---
 
 # Quality Checks

@@ -31,13 +31,32 @@ Process: fetch sources → validate manifests → sort by weight → transform p
 
 Flags: `--category <type>` (filter: `ai`, `files`, or `ide`)
 
-#### `baton update`
+#### `baton update` (deprecated)
 
-Check for and apply updates to installed profiles (bypasses lockfile).
+**Deprecated** — use `baton sync` instead. `baton update` bypasses the lockfile and fetches latest versions directly.
 
 ```bash
-baton update
-baton update --dry-run
+baton sync           # preferred
+baton update         # deprecated, bypasses lockfile
+```
+
+#### `baton apply`
+
+Deterministic lock-based sync. Applies exactly what is recorded in `baton.lock` without fetching or resolving sources.
+
+```bash
+baton apply
+baton apply --dry-run
+```
+
+Use `baton apply` in CI or when you want reproducible, offline config placement.
+
+#### `baton self-update`
+
+Update the baton CLI itself to the latest version.
+
+```bash
+baton self-update
 ```
 
 #### `baton diff`
@@ -65,8 +84,6 @@ Show dashboard or configure settings.
 
 ```bash
 baton config              # dashboard
-baton config list         # all settings
-baton config get <key>    # get value
 baton config set <key> <value>  # set value
 ```
 
@@ -123,8 +140,9 @@ overrides:
 Records exact versions and commit hashes for reproducibility.
 
 - `baton sync` respects locked versions
-- `baton update` bypasses lockfile, fetches latest
-- Always commit `baton.lock` to version control
+- `baton apply` uses lockfile deterministically (ideal for CI)
+- `baton update` (deprecated) bypasses lockfile, fetches latest
+- Always commit `baton.lock` to version control — do not gitignore it
 - Team members get identical configs via the lockfile
 
 ## Multi-Profile Composition

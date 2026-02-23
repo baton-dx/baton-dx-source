@@ -2,7 +2,7 @@
 
 ## What is Baton
 
-Baton is a CLI package manager for Developer Experience & AI configuration. It manages Skills, Rules, Agents, Memory Files, Commands, and file configs as versioned, composable profiles for 14 AI coding tools. Think of it as "npm for DX configs" — source repositories contain profiles that get resolved, merged, transformed, and placed into the correct format for each AI tool.
+Baton is a CLI package manager for Developer Experience & AI configuration. It manages Skills, Rules, Agents, Memory Files, and file configs as versioned, composable profiles for 14 AI coding tools. Think of it as "npm for DX configs" — source repositories contain profiles that get resolved, merged, transformed, and placed into the correct format for each AI tool.
 
 CLI aliases: `baton`, `baton-dx`, `btx`
 
@@ -29,8 +29,6 @@ A profile is a self-contained bundle of AI tool configurations, file placements,
 | rules | Behavioral constraints and coding standards | .md files |
 | agents | Specialized AI personas | .md files with YAML frontmatter |
 | memory | Persistent project context | MEMORY.md (transformed per tool) |
-| commands | Custom slash commands | .md files |
-| settings | Tool settings | JSON files |
 
 ### Scopes
 

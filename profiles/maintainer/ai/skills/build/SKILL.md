@@ -1,6 +1,7 @@
 ---
 name: build
-description: Run full build pipeline for the baton-dx monorepo
+description: Run full build pipeline for the baton-dx monorepo. Use when the user wants to typecheck and build all packages.
+allowed-tools: Bash
 ---
 
 # Build Pipeline

@@ -10,8 +10,8 @@
 ## Lockfile
 
 - Always commit `baton.lock` to version control
-- Run `baton sync` after pulling changes to ensure lockfile is current
-- Use `baton update` to fetch latest profile versions (bypasses lockfile)
+- Run `baton sync` after pulling changes to ensure configs are current
+- Use `baton apply` for deterministic lock-based placement (ideal for CI)
 - Never manually edit `baton.lock`
 
 ## Variables
@@ -30,5 +30,5 @@
 ## Team Collaboration
 
 - New team members: clone the repo, run `baton sync` to get all configs
-- Profile updates: run `baton update --dry-run` to preview, then `baton update`
+- Profile updates: run `baton sync --dry-run` to preview, then `baton sync`
 - Adding a profile: use `baton manage` or edit `baton.yaml` directly, then `baton sync`

@@ -37,9 +37,6 @@ ai:
     - source: MEMORY.md
       merge: append          # always specify merge strategy
 
-  commands:
-    - deploy
-
 files:
   - source: files/.editorconfig
     target: .editorconfig
@@ -54,9 +51,9 @@ variables:
   project_type: frontend
 
 hooks:
-  pre-sync:
-    - echo "Starting sync..."
-  post-sync:
+  post-install:
+    - echo "Profile installed"
+  post-update:
     - npm install
 ```
 
@@ -101,10 +98,8 @@ my-profile/
 │   │       └── tool-specific.md    # Cursor only
 │   ├── agents/
 │   │   └── agent-name.md
-│   ├── memory/
-│   │   └── MEMORY.md
-│   └── commands/
-│       └── command-name.md
+│   └── memory/
+│       └── MEMORY.md
 ├── files/
 │   └── .editorconfig
 └── ide/
@@ -160,21 +155,6 @@ memory: project
 ---
 
 You are a [role]. You specialize in [domain].
-```
-
-### Commands
-
-Commands are `.md` files defining slash commands:
-
-```markdown
----
-name: command-name
-description: What this command does
----
-
-# Command Title
-
-Instructions for what to do when invoked.
 ```
 
 ## Merge Strategy Guide

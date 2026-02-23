@@ -10,7 +10,7 @@
 
 ## Directory Layout
 
-- Use the conventional structure: `profiles/<name>/ai/{skills,rules,agents,memory,commands}`
+- Use the conventional structure: `profiles/<name>/ai/{skills,rules,agents,memory}`
 - Keep all profile content inside the `profiles/` directory
 - Do not place profile files at the source root
 

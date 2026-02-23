@@ -10,7 +10,7 @@
 
 ## Config Types
 
-- Always lowercase: skills, rules, agents, memory, commands, settings
+- Always lowercase: skills, rules, agents, memory
 - Skills are directories containing a SKILL.md file
 - Rules are .md files (Cursor transforms them to .mdc automatically)
 - Agents are .md files with YAML frontmatter

@@ -55,11 +55,10 @@ Copy rule files from tool-specific directories into `profiles/<name>/ai/rules/`:
 
 For `.cursorrules` (legacy single file), break it into separate rule files by topic. For Cursor's `.mdc` format, convert back to standard Markdown — baton handles the `.mdc` transformation automatically during sync.
 
-## Step 6: Migrate Skills and Commands
+## Step 6: Migrate Skills
 
 ```bash
 cp -r .claude/skills/* profiles/<name>/ai/skills/
-cp .claude/commands/*.md profiles/<name>/ai/commands/
 ```
 
 Ensure each skill directory has a `SKILL.md` file.
@@ -79,8 +78,6 @@ ai:
   memory:
     - source: MEMORY.md
       merge: append
-  commands:
-    - command-name
 ```
 
 ## Step 8: Test
@@ -105,7 +102,7 @@ rm .cursorrules .windsurfrules 2>/dev/null
 - [ ] All existing memory files identified and consolidated into MEMORY.md
 - [ ] All existing rules migrated to profile's ai/rules/ directory
 - [ ] Legacy rules files converted to standard Markdown
-- [ ] Skills and commands migrated with correct directory structure
+- [ ] Skills migrated with correct directory structure
 - [ ] Profile manifest lists all migrated items
 - [ ] Target tools include all tools that had existing configs
 - [ ] `baton sync --dry-run` produces expected output

@@ -1,6 +1,7 @@
 ---
 name: sync
-description: Preview and execute a baton sync
+description: Preview and execute a baton sync. Use when the user wants to sync their project configs from profiles.
+allowed-tools: Read, Bash
 ---
 
 # Sync Baton Configs

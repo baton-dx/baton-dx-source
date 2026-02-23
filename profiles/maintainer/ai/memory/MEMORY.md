@@ -46,7 +46,7 @@ All business logic lives here. No CLI or UI concerns.
 Zero-dependency path registry for all 14 AI tools.
 
 - **Registry:** `src/registry.ts` — `AGENT_PATHS` array with path configs for each tool
-- **Config types:** skills, rules, agents, memory, settings, commands
+- **Config types:** skills, rules, agents, memory
 - **Scopes:** project (`.tool/`) and global (`~/.tool/`)
 - **Exports:** `getAgentPath()`, `getAgentPaths()`, `getAllAgentKeys()`
 
@@ -77,7 +77,6 @@ interface ToolAdapter {
   transformRule(rule): RuleFile;
   transformAgent(agent): AgentFile;
   transformMemory(memory): MemoryFile;
-  transformCommand(command): CommandFile;
   validate(type, file): ValidationResult;
 }
 ```
@@ -90,7 +89,9 @@ Most adapters extend `BaseAdapter` (`base-adapter.ts`) which provides sensible d
 | --------------------------------- | ----------------------------------------------- |
 | `baton init` | Initialize Baton in your project (interactive wizard) |
 | `baton sync` | Resolve, merge, transform, and place all configs |
-| `baton update` | Check for and apply updates |
+| `baton apply` | Deterministic lock-based sync (no fetch) |
+| `baton update` | *(deprecated)* Bypass lockfile and fetch latest |
+| `baton self-update` | Update the baton CLI itself |
 | `baton diff` | Compare local files with remote source versions |
 | `baton manage` | Interactive project management wizard |
 | `baton config` | Show dashboard or configure settings |

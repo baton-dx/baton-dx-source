@@ -1,6 +1,7 @@
 ---
 name: status
-description: Show comprehensive baton project status
+description: Show comprehensive baton project status. Use when the user wants to see the current state of baton in their project.
+allowed-tools: Read, Bash, Glob
 ---
 
 # Baton Project Status

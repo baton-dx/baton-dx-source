@@ -33,6 +33,10 @@ ai:
       scope: project
     - name: migrate-config
       scope: project
+    - name: scaffold-profile
+      scope: project
+    - name: validate
+      scope: project
 
   rules:
     - profile-conventions
@@ -45,10 +49,6 @@ ai:
   memory:
     - source: MEMORY.md
       merge: "append"
-
-  commands:
-    - scaffold-profile
-    - validate
 
 variables:
   default_transport: "github"

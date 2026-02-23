@@ -19,10 +19,10 @@ This shows files that have diverged from the profile. Note any local modificatio
 ## Step 2: Preview Updates
 
 ```bash
-baton update --dry-run
+baton sync --dry-run
 ```
 
-This bypasses the lockfile and shows what the latest profile versions would change.
+This shows what the latest profile versions would change.
 
 ## Step 3: Review Changes
 
@@ -34,7 +34,7 @@ For each changed file, the user should consider:
 ## Step 4: Apply Updates
 
 ```bash
-baton update
+baton sync
 ```
 
 ## Step 5: Verify
@@ -43,7 +43,7 @@ baton update
 baton diff
 ```
 
-Should show no differences after a successful update.
+Should show no differences after a successful sync.
 
 ## Step 6: Commit
 
@@ -54,13 +54,15 @@ git commit -m "chore: update baton profiles"
 
 The lockfile now pins the new versions. Team members will get the same versions after pulling and running `baton sync`.
 
+For deterministic lock-based application (e.g., in CI), use `baton apply` instead of `baton sync`.
+
 ## Rollback
 
 If the update caused issues, restore the previous lockfile:
 
 ```bash
 git checkout HEAD~1 -- baton.lock
-baton sync
+baton apply
 ```
 
 This restores the previously pinned versions.

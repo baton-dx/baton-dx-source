@@ -61,7 +61,7 @@ This shows the full resolution process without writing files. Look for errors or
 ### Lockfile Issues
 
 **Symptom:** Sync uses stale versions
-**Fix:** Run `baton update` to bypass lockfile and fetch latest.
+**Fix:** Delete `baton.lock` and run `baton sync` to re-resolve and fetch latest.
 
 ## Step 3: Validate Manifests
 

@@ -1,6 +1,7 @@
 ---
 name: verify
-description: Pre-commit verification for the baton-dx monorepo
+description: Pre-commit verification for the baton-dx monorepo. Use when the user wants to verify the codebase is ready to commit.
+allowed-tools: Bash, Grep, Glob
 ---
 
 # Pre-Commit Verification

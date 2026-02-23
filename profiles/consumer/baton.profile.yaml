@@ -31,6 +31,10 @@ ai:
       scope: project
     - name: update-profiles
       scope: project
+    - name: sync
+      scope: project
+    - name: status
+      scope: project
 
   rules:
     - project-conventions
@@ -41,10 +45,6 @@ ai:
   memory:
     - source: MEMORY.md
       merge: "append"
-
-  commands:
-    - sync
-    - status
 
 variables:
   default_scope: "project"

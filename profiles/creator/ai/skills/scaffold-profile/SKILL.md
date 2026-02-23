@@ -1,6 +1,7 @@
 ---
 name: scaffold-profile
-description: Scaffold a new profile interactively
+description: Scaffold a new profile interactively. Use when the user wants to create a new profile with interactive prompts for name, tools, and inheritance.
+allowed-tools: Read, Write, Edit, Bash, Glob
 ---
 
 # Create New Profile

@@ -18,7 +18,7 @@ baton profile create <profile-name>
 
 Or manually:
 ```bash
-mkdir -p profiles/<name>/ai/{skills,rules,agents,memory,commands}
+mkdir -p profiles/<name>/ai/{skills,rules,agents,memory}
 mkdir -p profiles/<name>/{files,ide}
 touch profiles/<name>/baton.profile.yaml
 ```
@@ -97,11 +97,7 @@ Include frontmatter with `name`, `description`, `allowed-tools`, and optionally 
 
 Create agent files in `profiles/<name>/ai/agents/` with YAML frontmatter including `name`, `description`, `tools`, and optionally `model` and `memory`.
 
-## Step 7: Create Commands (optional)
-
-Create command files in `profiles/<name>/ai/commands/` with YAML frontmatter including `name` and `description`.
-
-## Step 8: Register in Source Manifest
+## Step 7: Register in Source Manifest
 
 Add the profile to `baton.source.yaml`:
 
@@ -112,7 +108,7 @@ profiles:
     description: "<profile description>"
 ```
 
-## Step 9: Validate
+## Step 8: Validate
 
 ```bash
 baton source validate

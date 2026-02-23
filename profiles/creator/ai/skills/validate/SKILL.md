@@ -1,6 +1,7 @@
 ---
 name: validate
-description: Validate source and profile manifests
+description: Validate source and profile manifests. Use when the user wants to check that their source repository and profiles are correctly configured.
+allowed-tools: Read, Bash, Glob, Grep
 ---
 
 # Validate Baton Source

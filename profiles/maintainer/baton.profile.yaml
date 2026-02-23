@@ -41,6 +41,12 @@ ai:
       scope: project
     - name: run-review
       scope: project
+    - name: build
+      scope: project
+    - name: quality
+      scope: project
+    - name: verify
+      scope: project
 
   rules:
     - general
@@ -54,11 +60,6 @@ ai:
   memory:
     - source: MEMORY.md
       merge: "append"
-
-  commands:
-    - build
-    - quality
-    - verify
 
 variables:
   monorepo_root: "."
