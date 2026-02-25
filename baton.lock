@@ -1,4 +1,4 @@
-locked_at: 2026-02-23T14:39:49.508Z
+locked_at: 2026-02-23T16:26:08.931Z
 packages:
   base:
     source: ../base
@@ -22,7 +22,7 @@ packages:
     source: github:baton-dx/baton-dx-source/profiles/creator
     resolved: github:baton-dx/baton-dx-source/profiles/creator
     version: 0.1.0
-    sha: 54187cb4a6371b35efe91c880abd42905f23ff5c
+    sha: 4384ab8330ac7ece2291a32dc035e30e97765658
     integrity:
       skills/create-source:
         hash: 63946d9d35c650eee0885dc7399c9d2b4241a589b9bb76a15b32a2e834c3fb68

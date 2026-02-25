@@ -2,8 +2,7 @@ name: "consumer"
 version: "0.1.0"
 description: "For developers using Baton to manage AI tool configurations in their projects — init, sync, update, and manage workflows."
 
-extends:
-  - ../base
+extends: base
 
 weight: 10
 

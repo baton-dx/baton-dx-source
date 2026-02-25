@@ -2,8 +2,7 @@ name: "creator"
 version: "0.1.0"
 description: "For developers creating and managing Baton sources and profiles — authoring, publishing, and versioning DX configurations."
 
-extends:
-  - ../base
+extends: base
 
 weight: 10
 
