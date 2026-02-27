@@ -61,7 +61,7 @@ ai:
       merge: "append"
 
 files:
-  - source: files/biome.json
+  - source: biome.json
     target: biome.json
     merge: "deep"
 
