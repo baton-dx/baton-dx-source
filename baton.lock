@@ -1,5 +1,5 @@
 baton_version: 0.14.1
-locked_at: 2026-02-27T13:46:51.077Z
+locked_at: 2026-02-27T13:59:09.881Z
 packages:
   base:
     source: github:baton-dx/baton-dx-source/profiles/base
@@ -8,19 +8,19 @@ packages:
     sha: unknown
     integrity:
       memory/CLAUDE.md:
-        hash: 6bb209b1d39334c360e5f5b36fc37448c4409cb7e409e44048d3eb67c032301d
+        hash: 11b4488a7a9f87131b2abaa72e5ee97f9232897a9b10d016627b19fc4d79ed4d
         type: memory
       memory/AGENTS.md:
-        hash: 17623b11ac2e11b30cba2abc5e3a37897d93cedc4303b06fb369d6c2bec9df29
+        hash: fbe731f776ec1894a6cb9395edfe0fdb61faa088588dbdc7a29317614d1b966b
         type: memory
       memory/GEMINI.md:
-        hash: 6bb209b1d39334c360e5f5b36fc37448c4409cb7e409e44048d3eb67c032301d
+        hash: 11b4488a7a9f87131b2abaa72e5ee97f9232897a9b10d016627b19fc4d79ed4d
         type: memory
   creator:
     source: github:baton-dx/baton-dx-source/profiles/creator
     resolved: github:baton-dx/baton-dx-source/profiles/creator
     version: 0.1.0
-    sha: 1d15f2782657701b2e3e58840eae84addca3a873
+    sha: a6afa6fa25794d73a60926a0ca82aa660edaffd7
     integrity:
       skills/create-source:
         hash: 63946d9d35c650eee0885dc7399c9d2b4241a589b9bb76a15b32a2e834c3fb68
@@ -41,11 +41,11 @@ packages:
         hash: 133c8eb86cf813474ade739d5d133087e2026f56aaf366284dd1a25d98d44690
         type: skills
       memory/CLAUDE.md:
-        hash: 6bb209b1d39334c360e5f5b36fc37448c4409cb7e409e44048d3eb67c032301d
+        hash: 11b4488a7a9f87131b2abaa72e5ee97f9232897a9b10d016627b19fc4d79ed4d
         type: memory
       memory/AGENTS.md:
-        hash: 17623b11ac2e11b30cba2abc5e3a37897d93cedc4303b06fb369d6c2bec9df29
+        hash: fbe731f776ec1894a6cb9395edfe0fdb61faa088588dbdc7a29317614d1b966b
         type: memory
       memory/GEMINI.md:
-        hash: 6bb209b1d39334c360e5f5b36fc37448c4409cb7e409e44048d3eb67c032301d
+        hash: 11b4488a7a9f87131b2abaa72e5ee97f9232897a9b10d016627b19fc4d79ed4d
         type: memory
