@@ -40,6 +40,16 @@
 - Lower weight = applied first, higher weight = wins conflicts
 - Default weight is 0
 
+## MCP Servers
+
+- Declare MCP servers in `ai.mcp` as an array of server objects
+- Server names must be kebab-case (used as config key in target tools)
+- Use `stdio` transport for local process-based servers, `http` or `sse` for remote
+- Never hardcode secrets — use `${VAR}` or `${VAR:-default}` syntax for env values
+- Set `scope: project` (default) for project-specific servers, `scope: global` for user-level
+- Use `tools` array to restrict which AI tools receive the server config
+- `command` + `args` are required for `stdio`, `url` is required for `http`/`sse`
+
 ## Variables
 
 - Use snake_case for variable names

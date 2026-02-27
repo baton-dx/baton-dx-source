@@ -49,5 +49,10 @@ ai:
     - source: MEMORY.md
       merge: "append"
 
+files:
+  - source: files/biome.json
+    target: biome.json
+    merge: "deep"
+
 variables:
   default_transport: "github"

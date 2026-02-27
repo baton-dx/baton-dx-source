@@ -22,6 +22,7 @@ Only `@baton-dx/cli` is published to npm. `core` and `agent-paths` are bundled v
 - **Adapters:** `ToolAdapter` interface in `core/src/adapters/types.ts`, `BaseAdapter` abstract class, one file per tool
 - **Schemas:** Zod as single source of truth (`core/src/schemas/`), derive types with `z.infer<>`
 - **Merge:** 8 strategies in `core/src/merge/`
+- **MCP:** Server config parsing, env-var transformation, and per-tool writer in `core/src/mcp/`; integrated into the sync pipeline
 
 ## Development
 

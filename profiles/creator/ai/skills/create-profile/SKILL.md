@@ -97,7 +97,33 @@ Include frontmatter with `name`, `description`, `allowed-tools`, and optionally 
 
 Create agent files in `profiles/<name>/ai/agents/` with YAML frontmatter including `name`, `description`, `tools`, and optionally `model` and `memory`.
 
-## Step 7: Register in Source Manifest
+## Step 7: Configure MCP Servers (optional)
+
+Add MCP server configs to the profile manifest in `ai.mcp`:
+
+```yaml
+ai:
+  mcp:
+    - name: filesystem
+      transport: stdio
+      command: npx
+      args: ["-y", "@modelcontextprotocol/server-filesystem"]
+      env:
+        ROOT_DIR: "${HOME}"
+      scope: project
+    - name: remote-api
+      transport: http
+      url: "https://api.example.com/mcp"
+      scope: project
+```
+
+Key decisions:
+- **transport**: `stdio` for local process-based servers, `http` or `sse` for remote
+- **scope**: `project` places config per-project, `global` places in home directory
+- **tools**: Optionally restrict to specific AI tools (e.g., `tools: [claude-code]`)
+- **env**: Use `${VAR}` syntax for environment variables — never hardcode secrets
+
+## Step 8: Register in Source Manifest
 
 Add the profile to `baton.source.yaml`:
 
@@ -108,7 +134,7 @@ profiles:
     description: "<profile description>"
 ```
 
-## Step 8: Validate
+## Step 9: Validate
 
 ```bash
 baton source validate
@@ -120,5 +146,6 @@ baton source validate
 - [ ] `baton.profile.yaml` has valid name, version, and ai.tools
 - [ ] Memory file created with meaningful project context
 - [ ] At least one rule file created
+- [ ] MCP servers configured if the profile provides tool integrations
 - [ ] Profile registered in `baton.source.yaml`
 - [ ] Validation passes

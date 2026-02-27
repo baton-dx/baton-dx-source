@@ -65,11 +65,13 @@ If omitted, baton configures all tools listed in the profile's `ai.tools`.
 baton sync --dry-run
 ```
 
-Review the output. If everything looks correct:
+Review the output — this shows which files will be placed, including any MCP server configurations from the profile. If everything looks correct:
 
 ```bash
 baton sync
 ```
+
+If the profile includes MCP servers, `baton sync` writes them into the appropriate tool-specific config files (e.g., `.claude/settings.json`, `.cursor/mcp.json`).
 
 ## Step 6: Commit
 

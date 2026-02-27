@@ -10,11 +10,23 @@
 
 ## Config Types
 
-- Always lowercase: skills, rules, agents, memory
+- Always lowercase: skills, rules, agents, memory, mcp
 - Skills are directories containing a SKILL.md file
 - Rules are .md files (Cursor transforms them to .mdc automatically)
 - Agents are .md files with YAML frontmatter
 - Memory uses the canonical filename MEMORY.md in profiles
+- MCP servers are declared inline in `ai.mcp` (no separate files)
+
+## MCP Server Terminology
+
+- **transport** — connection type: `stdio`, `http`, or `sse`
+- **command** — executable for `stdio` transport (e.g., `npx`, `uvx`, `node`)
+- **args** — command arguments as string array
+- **env** — environment variables, use `${VAR}` or `${VAR:-default}` syntax
+- **url** — server URL for `http` or `sse` transport
+- **headers** — HTTP headers for `http` or `sse` transport
+- **scope** — `project` or `global`, defaults to `project`
+- **tools** — optional array of tool keys to restrict which AI tools receive the MCP config
 
 ## Scopes
 

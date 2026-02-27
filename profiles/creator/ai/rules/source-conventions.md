@@ -20,7 +20,7 @@
 - Keep `baton.source.yaml` version in sync with the latest Git tag
 - Follow semver:
   - New profile added → minor bump
-  - New rule or skill in existing profile → minor bump
+  - New rule, skill, or MCP server in existing profile → minor bump
   - Bug fix in a rule or config → patch bump
   - Breaking rename or removal → major bump
 

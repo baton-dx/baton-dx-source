@@ -76,7 +76,46 @@ ai/rules/
     └── react-patterns.md    # Cursor only
 ```
 
-## Step 6: Detect IDEs (optional)
+## Step 6: Configure MCP Servers (optional)
+
+Profiles can distribute MCP server configurations to AI tools. Add to `baton.profile.yaml`:
+
+```yaml
+ai:
+  mcp:
+    - name: server-name
+      transport: stdio          # stdio, http, or sse
+      command: npx
+      args: ["-y", "@scope/mcp-server"]
+      env:
+        API_KEY: "${API_KEY}"
+      scope: project            # project or global
+```
+
+For remote servers:
+```yaml
+ai:
+  mcp:
+    - name: remote-server
+      transport: http
+      url: "https://api.example.com/mcp"
+      headers:
+        Authorization: "Bearer ${TOKEN}"
+      scope: project
+```
+
+Use `tools` to restrict which AI tools receive the config:
+```yaml
+ai:
+  mcp:
+    - name: claude-only-server
+      transport: stdio
+      command: node
+      args: ["server.js"]
+      tools: [claude-code]
+```
+
+## Step 7: Detect IDEs (optional)
 
 ```bash
 baton ides scan

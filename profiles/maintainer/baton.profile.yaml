@@ -60,6 +60,11 @@ ai:
     - source: MEMORY.md
       merge: "append"
 
+files:
+  - source: files/biome.json
+    target: biome.json
+    merge: "deep"
+
 variables:
   monorepo_root: "."
   bun_version: "latest"

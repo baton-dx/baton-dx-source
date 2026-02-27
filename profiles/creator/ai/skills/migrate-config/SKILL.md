@@ -63,7 +63,38 @@ cp -r .claude/skills/* profiles/<name>/ai/skills/
 
 Ensure each skill directory has a `SKILL.md` file.
 
-## Step 7: Configure the Profile Manifest
+## Step 7: Migrate MCP Server Configs
+
+Check for existing MCP configurations:
+
+```bash
+# Claude Code MCP settings
+cat .claude/settings.json 2>/dev/null | grep -A 5 "mcpServers"
+
+# Cursor MCP settings
+cat .cursor/mcp.json 2>/dev/null
+
+# VS Code MCP settings
+cat .vscode/settings.json 2>/dev/null | grep -A 5 "mcp"
+```
+
+Convert found MCP configs into the profile manifest format:
+
+```yaml
+ai:
+  mcp:
+    - name: server-name        # derive from the config key
+      transport: stdio          # stdio, http, or sse
+      command: npx              # from the existing config
+      args: ["-y", "@scope/server"]
+      env:
+        API_KEY: "${API_KEY}"   # use ${VAR} syntax, never hardcode
+      scope: project
+```
+
+Replace hardcoded paths and secrets with `${VAR}` environment variable references.
+
+## Step 8: Configure the Profile Manifest
 
 Update `profiles/<name>/baton.profile.yaml` with all migrated items:
 
@@ -80,7 +111,7 @@ ai:
       merge: append
 ```
 
-## Step 8: Test
+## Step 9: Test
 
 ```bash
 baton init --profile file:./path-to-source/profiles/<name>
@@ -89,7 +120,7 @@ baton sync --dry-run
 
 Review the dry run output. Verify files would be placed in the expected locations.
 
-## Step 9: Clean Up Legacy Files
+## Step 10: Clean Up Legacy Files
 
 After verifying sync works correctly, remove legacy files that baton now manages:
 
@@ -103,6 +134,7 @@ rm .cursorrules .windsurfrules 2>/dev/null
 - [ ] All existing rules migrated to profile's ai/rules/ directory
 - [ ] Legacy rules files converted to standard Markdown
 - [ ] Skills migrated with correct directory structure
+- [ ] MCP server configs migrated with `${VAR}` env references (no hardcoded secrets)
 - [ ] Profile manifest lists all migrated items
 - [ ] Target tools include all tools that had existing configs
 - [ ] `baton sync --dry-run` produces expected output

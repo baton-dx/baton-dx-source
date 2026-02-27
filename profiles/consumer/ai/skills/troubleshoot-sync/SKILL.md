@@ -63,6 +63,18 @@ This shows the full resolution process without writing files. Look for errors or
 **Symptom:** Sync uses stale versions
 **Fix:** Delete `baton.lock` and run `baton sync` to re-resolve and fetch latest.
 
+### MCP Server Issues
+
+**Symptom:** MCP servers not appearing in tool config after sync
+**Fix:**
+- Check that the profile declares `ai.mcp` entries in `baton.profile.yaml`
+- Verify the AI tool is listed in `ai.tools` of the profile
+- If the MCP entry has a `tools` filter, confirm your tool is included
+- Check the target config file for the tool (e.g., `.claude/settings.json` for Claude Code)
+
+**Symptom:** MCP server env vars not resolving
+**Fix:** MCP env values use `${VAR}` syntax. The variables must be set in your shell environment — baton passes them through as references, not resolved values.
+
 ## Step 3: Validate Manifests
 
 Read and check the project manifest:

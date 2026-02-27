@@ -27,8 +27,14 @@
 - After sync, check `baton diff` for any unexpected divergences
 - Commit `baton.lock` after successful sync
 
+## MCP Servers
+
+- Profiles may include MCP server configurations that `baton sync` places into tool-specific config files
+- MCP env values use `${VAR}` references — set the actual values in your local environment
+- Never commit resolved secrets; the `${VAR}` syntax is intentional
+
 ## Team Collaboration
 
-- New team members: clone the repo, run `baton sync` to get all configs
+- New team members: clone the repo, run `baton sync` to get all configs (including MCP servers)
 - Profile updates: run `baton sync --dry-run` to preview, then `baton sync`
 - Adding a profile: use `baton manage` or edit `baton.yaml` directly, then `baton sync`
