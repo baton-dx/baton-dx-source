@@ -1,5 +1,5 @@
 baton_version: 0.14.1
-locked_at: 2026-02-27T13:59:09.881Z
+locked_at: 2026-02-27T14:07:17.022Z
 packages:
   base:
     source: github:baton-dx/baton-dx-source/profiles/base
@@ -16,11 +16,14 @@ packages:
       memory/GEMINI.md:
         hash: 11b4488a7a9f87131b2abaa72e5ee97f9232897a9b10d016627b19fc4d79ed4d
         type: memory
+      files/.claude/settings.json:
+        hash: 045e9261aafd6b18151327785f20998d5c343d59813a8a0f12e93e0f1813018b
+        type: files
   creator:
     source: github:baton-dx/baton-dx-source/profiles/creator
     resolved: github:baton-dx/baton-dx-source/profiles/creator
     version: 0.1.0
-    sha: a6afa6fa25794d73a60926a0ca82aa660edaffd7
+    sha: 39e9a317a9de3b2ab0809a72864a8eedce2e9bbd
     integrity:
       skills/create-source:
         hash: 63946d9d35c650eee0885dc7399c9d2b4241a589b9bb76a15b32a2e834c3fb68
@@ -49,3 +52,6 @@ packages:
       memory/GEMINI.md:
         hash: 11b4488a7a9f87131b2abaa72e5ee97f9232897a9b10d016627b19fc4d79ed4d
         type: memory
+      files/biome.json:
+        hash: cb6eae065c613ba4de264f34e6055dda99848fdba9394a1dbffbd0ff7d77009c
+        type: files

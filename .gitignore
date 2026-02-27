@@ -77,4 +77,8 @@ GEMINI.md
 .vscode/
 .windsurf/
 
+## files
+.claude/settings.json
+biome.json
+
 # End Baton managed
