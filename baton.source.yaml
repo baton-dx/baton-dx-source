@@ -5,20 +5,7 @@ repository: "github:baton-dx/baton-dx-source"
 
 ai:
   tools:
-    - claude-code
-    - cursor
-    - windsurf
-    - antigravity
-    - codex
-    - github-copilot
-    - opencode
-    - amp
-    - kiro
-    - zed
-    - cline
-    - roo
-    - junie
-    - trae
+    - "*"
 
 profiles:
   - name: "base"
