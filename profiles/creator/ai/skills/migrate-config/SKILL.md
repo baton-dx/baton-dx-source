@@ -96,19 +96,15 @@ Replace hardcoded paths and secrets with `${VAR}` environment variable reference
 
 ## Step 8: Configure the Profile Manifest
 
-Update `profiles/<name>/baton.profile.yaml` with all migrated items:
+Update `profiles/<name>/baton.profile.yaml` — only `ai.tools` and `ai.mcp` go in the manifest. Content (skills, rules, memory, agents) is auto-discovered from the filesystem:
 
 ```yaml
+name: "<profile-name>"
+version: "0.1.0"
+description: "Migrated AI tool configurations"
+
 ai:
   tools: [claude-code, cursor, windsurf]
-  skills:
-    - name: skill-name
-      scope: project
-  rules:
-    - rule-name
-  memory:
-    - source: MEMORY.md
-      merge: append
 ```
 
 ## Step 9: Test
@@ -135,7 +131,7 @@ rm .cursorrules .windsurfrules 2>/dev/null
 - [ ] Legacy rules files converted to standard Markdown
 - [ ] Skills migrated with correct directory structure
 - [ ] MCP server configs migrated with `${VAR}` env references (no hardcoded secrets)
-- [ ] Profile manifest lists all migrated items
+- [ ] Profile manifest has correct `ai.tools` and `ai.mcp`
 - [ ] Target tools include all tools that had existing configs
 - [ ] `baton sync --dry-run` produces expected output
 - [ ] Legacy files cleaned up after verification

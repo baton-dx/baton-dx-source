@@ -33,3 +33,23 @@ variables:
 - Always commit `baton.yaml` and `baton.lock` to version control
 - Use `baton apply` in CI for reproducible configs
 - Use `baton manage` to add/remove profiles interactively
+
+<!-- baton:if tool="claude-code" -->
+## Claude Code Tips
+
+- Use `@file` syntax to reference project files within Claude Code
+- Run `baton preview --tool claude-code` to see exactly what gets placed
+<!-- baton:endif -->
+
+<!-- baton:if tool="cursor" -->
+## Cursor Tips
+
+- Use `baton preview --tool cursor` to see the transformed `.mdc` output
+<!-- baton:endif -->
+
+<!-- baton:if tool="windsurf" -->
+## Windsurf Tips
+
+- Frontmatter is automatically stripped from rules for Windsurf
+- Use `baton preview --tool windsurf` to see the output
+<!-- baton:endif -->

@@ -10,14 +10,6 @@
 ## Formatting
 
 - Indentation: 2 spaces (never tabs)
-- Use block style for multi-item arrays:
-  ```yaml
-  skills:
-    - name: code-review
-      scope: project
-    - name: refactor
-      scope: project
-  ```
 - Tools arrays may use inline format when listing tool keys:
   ```yaml
   tools: [claude-code, cursor, windsurf]
@@ -25,15 +17,15 @@
 
 ## AI Section
 
-- Always specify `merge` for memory entries (typically `append`)
-- Always specify `scope` for skills, agents, and rules entries (`project` or `global`)
+- Content (skills, rules, agents, memory) is auto-discovered from the filesystem — do NOT declare it in the manifest
+- Only `ai.tools` and `ai.mcp` are declared in the manifest
 - Use `MEMORY.md` as the memory source filename (baton adapters transform it per tool)
+- Merge defaults to `concat`; override with `merge: replace` in file frontmatter
+- Use directives (`<!-- baton:if -->`, `<!-- baton:include -->`) for conditional and shared content
 
-## File Section
-
-- Always specify `merge` strategy for file entries
-- Use relative paths for `source` (relative to profile directory)
-- Use project-root-relative paths for `target`
+<!-- baton:if tool="cursor" -->
+- Cursor transforms rules to `.mdc` format with frontmatter — write standard Markdown, Baton handles the conversion
+<!-- baton:endif -->
 
 ## Variables
 

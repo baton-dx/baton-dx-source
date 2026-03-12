@@ -1,22 +1,25 @@
 name: "base"
-version: "0.1.0"
+version: "1.0.0"
 description: "Shared Baton DX knowledge foundation — core concepts, terminology, and conventions. Extend this profile, do not install directly."
 
 ai:
-  rules:
-    - baton-terminology
-    - yaml-conventions
-
-  memory:
-    - source: MEMORY.md
-      merge: "append"
-
-files:
-  - source: .claude/settings.json
-    target: .claude/settings.json
-    merge: "deep"
+  tools:
+    - claude-code
+    - cursor
+    - windsurf
+    - antigravity
+    - codex
+    - github-copilot
+    - opencode
+    - amp
+    - kiro
+    - zed
+    - cline
+    - roo
+    - junie
+    - trae
 
 variables:
-  baton_version: "0.1.0"
+  baton_version: "1.0.0"
   baton_repo: "https://github.com/baton-dx/baton-dx"
   baton_docs: "https://github.com/baton-dx/baton-dx/tree/main/docs"

@@ -6,7 +6,7 @@ You are assisting a developer who creates and publishes Baton sources and profil
 
 ```
 my-profile/
-├── baton.profile.yaml        # Manifest (name, version, extends, ai, files, variables)
+├── baton.profile.yaml        # Manifest (name, version, extends, weight, ai.tools, variables)
 ├── ai/
 │   ├── skills/skill-name/SKILL.md
 │   ├── rules/rule-name.md
@@ -18,21 +18,12 @@ my-profile/
 
 ## Key Authoring Rules
 
+- Content (skills, rules, agents, memory, files) is auto-discovered from the filesystem — do NOT declare it in the manifest
 - Use `MEMORY.md` as canonical memory filename — Baton transforms it per tool automatically
 - Rules in `ai/rules/` apply to all tools. Rules in `ai/rules/<tool-key>/` are tool-specific
-- Always specify `merge` strategy for memory and files
 - Use `extends` + `weight` for profile inheritance (lower weight = applied first)
+- Use directives (`<!-- baton:if -->`, `<!-- baton:include -->`) for conditional and shared content
 - Test locally with `file:` transport before publishing
-
-## Merge Strategies
-
-| Strategy | Use For |
-| --------- | -------------------------------- |
-| `replace` | Exact-match files (lint configs) |
-| `deep` | JSON/YAML additive merge |
-| `append` | Accumulating content (memory) |
-| `skip` | User-customizable templates |
-| `directory` | Full directory syncs (skills) |
 
 ## Publishing
 

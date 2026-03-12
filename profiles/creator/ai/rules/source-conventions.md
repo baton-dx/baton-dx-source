@@ -3,8 +3,8 @@
 ## Manifest Requirements
 
 - Source names must be kebab-case (e.g., `my-team-configs`)
-- Always register all profiles in `baton.source.yaml` with correct paths
-- Include a `description` for both the source and each profile entry
+- Profiles are automatically discovered from `profiles/` — do not register them in `baton.source.yaml`
+- Include a `description` for the source
 - Use valid semver for the `version` field
 - Set the `repository` field for discoverability
 

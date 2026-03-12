@@ -1,25 +1,14 @@
 name: "baton-dx-source"
-version: "0.2.0"
+version: "1.0.0"
 description: "Official Baton DX source repository — profiles for maintainers, creators, and consumers of Baton DX"
 repository: "github:baton-dx/baton-dx-source"
+
+requires:
+  baton-cli: ">=1.0.0"
 
 ai:
   tools:
     - "*"
-
-profiles:
-  - name: "base"
-    path: "profiles/base"
-    description: "Shared Baton DX knowledge foundation (extend this, do not install directly)"
-  - name: "maintainer"
-    path: "profiles/maintainer"
-    description: "For developers contributing to the baton-dx codebase"
-  - name: "creator"
-    path: "profiles/creator"
-    description: "For developers creating and managing Baton sources and profiles"
-  - name: "consumer"
-    path: "profiles/consumer"
-    description: "For developers using Baton to manage AI tool configs in their projects"
 
 metadata:
   author: "baton-dx"

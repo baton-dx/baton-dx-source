@@ -13,20 +13,19 @@ Validate the current source repository and all its profiles.
 1. Read `baton.source.yaml` and verify:
    - `name` is kebab-case
    - `version` is valid semver
-   - All entries in `profiles` array have `name`, `path`, and `description`
+   - `requires["baton-cli"]` is a valid semver range (if present)
 
-2. For each registered profile, verify:
-   - Directory exists at the declared `path`
+2. Auto-discover profiles from `profiles/` directory and for each verify:
    - `baton.profile.yaml` exists inside the directory
    - Profile manifest has valid `name` and `version`
-   - If `extends` is set, the referenced profile path exists
-   - All referenced files (memory sources, rules, skills) exist on disk
+   - If `extends` is set, the referenced profile exists
+   - Content files (rules, memory, skills, agents) exist on disk in the conventional structure
 
 3. Check for common issues:
-   - Profiles that exist on disk but are not registered in `baton.source.yaml`
    - Duplicate profile names
    - Circular inheritance chains
-   - Missing MEMORY.md files referenced in memory entries
+   - Undefined variables referenced in content files
+   - Sibling profiles with same weight that could conflict
 
 4. Run `baton source validate` if available:
    ```bash

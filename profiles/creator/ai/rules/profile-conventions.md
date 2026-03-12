@@ -6,20 +6,20 @@
 - Always include a `description` field explaining what the profile provides
 - List all target `ai.tools` explicitly — do not rely on source-level defaults
 - Use valid semver for the `version` field (e.g., `"1.0.0"`)
+- Content (skills, rules, agents, memory, files) is auto-discovered — do NOT declare it in the manifest
 
 ## Memory Files
 
 - Use `MEMORY.md` as the canonical memory filename
 - Baton transforms `MEMORY.md` to tool-specific names automatically
-- Use `append` merge strategy for memory (accumulates context across profiles)
 - Keep memory files concise — they are loaded into every AI session
 
 ## Rules
 
 - Rules should be concise, actionable constraints
-- Use `replace` merge strategy for rules (profile rules are authoritative)
 - Place universal rules directly in `ai/rules/`
 - Place tool-specific rules in `ai/rules/<tool-key>/` subdirectories
+- Use `merge: replace` in frontmatter if a rule should be authoritative (last profile wins)
 
 ## Skills
 
@@ -49,6 +49,12 @@
 - Set `scope: project` (default) for project-specific servers, `scope: global` for user-level
 - Use `tools` array to restrict which AI tools receive the server config
 - `command` + `args` are required for `stdio`, `url` is required for `http`/`sse`
+
+## Directives
+
+- Use `<!-- baton:if tool="..." -->` for tool-specific content within a single file
+- Use `<!-- baton:include src="..." mode="reference" -->` to share fragments across skills/rules without duplication
+- Place shared fragments in `ai/memory/shared/` — they become `@.baton/includes/...` references
 
 ## Variables
 

@@ -10,7 +10,7 @@ CLI aliases: `baton`, `baton-dx`, `btx`
 - **Profile** — self-contained bundle of AI tool configs, placed via `baton sync`
 - **Config types** — skills (SKILL.md directories), rules (.md files), agents (.md with frontmatter), memory (MEMORY.md), mcp (server configs in ai.mcp)
 - **Scopes** — `project` (placed in project dir) or `global` (placed in home dir)
-- **Merge strategies** — replace, deep, append, prepend, skip, prompt, directory, import
+- **Merge strategies** — concat (default, appends content), replace (last profile wins)
 
 ## Key Files
 

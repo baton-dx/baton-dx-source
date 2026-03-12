@@ -29,11 +29,9 @@ Interactively scaffold a new profile in the current source repository.
 
 6. Create at least one rule file based on the project type.
 
-7. Register in `baton.source.yaml` if not already present.
-
-8. Validate:
+7. Validate (profiles are auto-discovered from `profiles/` — no manual registration needed):
    ```bash
    baton source validate
    ```
 
-9. Suggest next steps: add more rules, create skills, sync to a test project.
+8. Suggest next steps: add more rules, create skills, sync to a test project.

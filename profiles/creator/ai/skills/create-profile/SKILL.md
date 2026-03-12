@@ -34,16 +34,13 @@ description: "Description of what this profile provides"
 
 ai:
   tools: [claude-code, cursor, windsurf]
-  rules:
-    - coding-style
-  memory:
-    - source: MEMORY.md
-      merge: append
 ```
+
+Content (rules, memory, skills, agents) is auto-discovered from the filesystem — do NOT declare it in the manifest.
 
 Key decisions:
 - **tools**: Which AI tools should this profile target?
-- **extends**: Should this profile extend a base profile? Use `extends: ["../base"]`
+- **extends**: Should this profile extend a base profile? Use `extends: base`
 - **weight**: If composed with other profiles, what priority? Default is 0
 
 ## Step 3: Create Memory File
@@ -81,6 +78,10 @@ ai/rules/
 └── cursor/
     └── react-patterns.md    # Cursor only
 ```
+
+<!-- baton:if has="typescript" -->
+For TypeScript projects, consider adding rules for strict mode, Zod schema patterns, and async conventions.
+<!-- baton:endif -->
 
 ## Step 5: Create Skills (optional)
 
@@ -123,22 +124,13 @@ Key decisions:
 - **tools**: Optionally restrict to specific AI tools (e.g., `tools: [claude-code]`)
 - **env**: Use `${VAR}` syntax for environment variables — never hardcode secrets
 
-## Step 8: Register in Source Manifest
-
-Add the profile to `baton.source.yaml`:
-
-```yaml
-profiles:
-  - name: "<profile-name>"
-    path: "profiles/<profile-name>"
-    description: "<profile description>"
-```
-
-## Step 9: Validate
+## Step 8: Validate
 
 ```bash
 baton source validate
 ```
+
+Profiles are auto-discovered from the `profiles/` directory — no manual registration needed.
 
 ## Checklist
 
@@ -147,5 +139,4 @@ baton source validate
 - [ ] Memory file created with meaningful project context
 - [ ] At least one rule file created
 - [ ] MCP servers configured if the profile provides tool integrations
-- [ ] Profile registered in `baton.source.yaml`
 - [ ] Validation passes

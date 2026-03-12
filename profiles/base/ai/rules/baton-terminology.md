@@ -34,7 +34,9 @@
 
 ## Merge Strategies
 
-- Always lowercase: replace, deep, append, prepend, skip, prompt, directory, import
+- Always lowercase: concat, replace
+- `concat` is the default (appends content across profiles)
+- `replace` means last profile wins
 - Never capitalize or abbreviate merge strategy names
 
 ## CLI Commands
