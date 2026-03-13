@@ -5,11 +5,11 @@ allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 argument-hint: <tool-name> (e.g., "aider", "continue", "supermaven")
 ---
 
-# Add New AI Tool Adapter
+## Add New AI Tool Adapter
 
 Add support for a new AI coding tool to Baton. This involves changes across all three packages.
 
-## Before You Start
+### Before You Start
 
 Gather the following information about the new AI tool:
 - **Key**: kebab-case identifier (e.g., `my-tool`)
@@ -21,7 +21,7 @@ Gather the following information about the new AI tool:
 - **Detection**: CLI binary name and/or config directory for auto-detection
 - **Commands directory**: Where slash commands go (e.g., `.my-tool/commands/` or `.my-tool/workflows/`)
 
-## Step 1: Add Path Config (`@baton-dx/agent-paths`)
+### Step 1: Add Path Config (`@baton-dx/agent-paths`)
 
 **File**: `packages/agent-paths/src/registry.ts`
 
@@ -60,7 +60,7 @@ Add a new entry to the `AGENT_PATHS` array:
 },
 ```
 
-## Step 2: Create Adapter Class (`@baton-dx/core`)
+### Step 2: Create Adapter Class (`@baton-dx/core`)
 
 **File**: `packages/core/src/adapters/my-tool.ts`
 
@@ -142,7 +142,7 @@ export class MyToolAdapter implements ToolAdapter {
 
 **If the tool has a unique memory filename** (like Claude Code's `CLAUDE.md` or Antigravity's `GEMINI.md`), update `transformMemory()` accordingly.
 
-## Step 3: Register Adapter
+### Step 3: Register Adapter
 
 **File**: `packages/core/src/adapters/registry.ts`
 
@@ -156,7 +156,7 @@ import { MyToolAdapter } from "./my-tool.js";
 new MyToolAdapter(),
 ```
 
-## Step 4: Create Tests
+### Step 4: Create Tests
 
 **File**: `packages/core/src/adapters/my-tool.test.ts`
 
@@ -215,13 +215,13 @@ describe("MyToolAdapter", () => {
 });
 ```
 
-## Step 5: Update Documentation
+### Step 5: Update Documentation
 
 **File**: `docs/08-ai-tools-reference.md`
 
 Add the new tool to the tools table and create a detail section.
 
-## Step 6: Verify
+### Step 6: Verify
 
 ```bash
 bun run typecheck
@@ -230,7 +230,7 @@ bun run lint
 bun run dead-code
 ```
 
-## Checklist
+### Checklist
 
 - [ ] Path config added to `AGENT_PATHS` in `packages/agent-paths/src/registry.ts`
 - [ ] Adapter class created in `packages/core/src/adapters/<key>.ts`

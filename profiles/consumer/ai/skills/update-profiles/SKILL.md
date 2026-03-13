@@ -4,11 +4,11 @@ description: Guide for updating baton profiles and reviewing changes. Use when t
 allowed-tools: Read, Bash, Grep
 ---
 
-# Update Baton Profiles
+## Update Baton Profiles
 
 Guide the user through updating their installed profiles to the latest versions.
 
-## Step 1: Check Current State
+### Step 1: Check Current State
 
 ```bash
 baton diff
@@ -16,7 +16,7 @@ baton diff
 
 This shows files that have diverged from the profile. Note any local modifications.
 
-## Step 2: Preview Updates
+### Step 2: Preview Updates
 
 ```bash
 baton sync --dry-run
@@ -24,20 +24,20 @@ baton sync --dry-run
 
 This shows what the latest profile versions would change.
 
-## Step 3: Review Changes
+### Step 3: Review Changes
 
 For each changed file, the user should consider:
 - **Is the change expected?** (new rules, updated memory, etc.)
 - **Will it overwrite local modifications?** (check merge strategies)
 - **Are there breaking changes?** (renamed or removed configs)
 
-## Step 4: Apply Updates
+### Step 4: Apply Updates
 
 ```bash
 baton sync
 ```
 
-## Step 5: Verify
+### Step 5: Verify
 
 ```bash
 baton diff
@@ -45,7 +45,7 @@ baton diff
 
 Should show no differences after a successful sync.
 
-## Step 6: Commit
+### Step 6: Commit
 
 ```bash
 git add baton.lock
@@ -56,7 +56,7 @@ The lockfile now pins the new versions. Team members will get the same versions 
 
 For deterministic lock-based application (e.g., in CI), use `baton apply` instead of `baton sync`.
 
-## Rollback
+### Rollback
 
 If the update caused issues, restore the previous lockfile:
 

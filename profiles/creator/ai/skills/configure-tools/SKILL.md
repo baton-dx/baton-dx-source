@@ -4,11 +4,11 @@ description: Guide for selecting and configuring AI tools in a baton project or 
 allowed-tools: Read, Write, Edit, Bash
 ---
 
-# Configure AI Tools
+## Configure AI Tools
 
 Help the user select and configure AI tools for their baton project or profile.
 
-## Step 1: Detect Installed Tools
+### Step 1: Detect Installed Tools
 
 ```bash
 baton ai-tools scan
@@ -16,7 +16,7 @@ baton ai-tools scan
 
 This checks for 14 supported tools by scanning for CLI binaries and config directories.
 
-## Step 2: List Available Tools
+### Step 2: List Available Tools
 
 ```bash
 baton ai-tools list --all
@@ -24,7 +24,7 @@ baton ai-tools list --all
 
 Shows all 14 supported tools with installation status.
 
-## Step 3: Choose Target Tools
+### Step 3: Choose Target Tools
 
 For a **profile** (source author), set in `baton.profile.yaml`:
 ```yaml
@@ -40,9 +40,9 @@ ai:
 
 If `ai.targets` is omitted in the project, baton uses the union of all `ai.tools` from applied profiles.
 
-## Step 4: Understand Tool-Specific Behaviors
+### Step 4: Understand Tool-Specific Behaviors
 
-### Memory File Names
+#### Memory File Names
 
 | Tool | Memory File |
 | --------------- | -------------------------- |
@@ -55,7 +55,7 @@ If `ai.targets` is omitted in the project, baton uses the union of all `ai.tools
 
 Use `MEMORY.md` in profiles — baton transforms it automatically.
 
-### Rule Format Differences
+#### Rule Format Differences
 
 | Tool | Format |
 | ---------- | ---------------------------------------- |
@@ -65,57 +65,56 @@ Use `MEMORY.md` in profiles — baton transforms it automatically.
 
 Write rules as standard Markdown with optional YAML frontmatter. Baton handles per-tool transformation.
 
-## Step 5: Tool-Specific Rules (optional)
+### Step 5: Tool-Specific Content (optional)
 
-To add rules that only apply to a specific tool:
+Use `<!-- baton:if -->` directives for tool-specific content within rule files:
 
+```markdown
+## Coding Style
+
+General coding conventions here.
+
+<!-- baton:if tool="cursor" -->
+### Cursor-Specific Patterns
+Cursor-specific guidance here.
+<!-- baton:endif -->
 ```
-ai/rules/
-├── coding-style.md          # all tools
-└── cursor/
-    └── react-patterns.md    # Cursor only
-```
 
-## Step 6: Configure MCP Servers (optional)
+### Step 6: Configure MCP Servers (optional)
 
-Profiles can distribute MCP server configurations to AI tools. Add to `baton.profile.yaml`:
+Profiles can distribute MCP server configurations to AI tools. Create YAML files in `ai/mcp/` — one file per server:
 
+`ai/mcp/server-name.yaml`:
 ```yaml
-ai:
-  mcp:
-    - name: server-name
-      transport: stdio          # stdio, http, or sse
-      command: npx
-      args: ["-y", "@scope/mcp-server"]
-      env:
-        API_KEY: "${API_KEY}"
-      scope: project            # project or global
+name: server-name
+transport: stdio
+command: npx
+args: ["-y", "@scope/mcp-server"]
+env:
+  API_KEY: "${API_KEY}"
+scope: project
 ```
 
-For remote servers:
+For remote servers — `ai/mcp/remote-server.yaml`:
 ```yaml
-ai:
-  mcp:
-    - name: remote-server
-      transport: http
-      url: "https://api.example.com/mcp"
-      headers:
-        Authorization: "Bearer ${TOKEN}"
-      scope: project
+name: remote-server
+transport: http
+url: "https://api.example.com/mcp"
+headers:
+  Authorization: "Bearer ${TOKEN}"
+scope: project
 ```
 
-Use `tools` to restrict which AI tools receive the config:
+Use `tools` to restrict which AI tools receive the config — `ai/mcp/claude-only-server.yaml`:
 ```yaml
-ai:
-  mcp:
-    - name: claude-only-server
-      transport: stdio
-      command: node
-      args: ["server.js"]
-      tools: [claude-code]
+name: claude-only-server
+transport: stdio
+command: node
+args: ["server.js"]
+tools: [claude-code]
 ```
 
-## Step 7: Detect IDEs (optional)
+### Step 7: Detect IDEs (optional)
 
 ```bash
 baton ides scan

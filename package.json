@@ -1,15 +1,19 @@
 {
   "name": "@baton-dx/baton-dx-source",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "check": "biome check .",
     "format": "biome format --write .",
     "lint": "biome lint .",
-    "lint:fix": "biome lint --write ."
+    "lint:fix": "biome lint --write .",
+    "changeset": "changeset",
+    "version": "changeset version && node scripts/sync-version.mjs",
+    "release": "node scripts/sync-version.mjs && git add -A && git commit -m \"chore: version packages\" && git tag $(node -p \"require('./package.json').version\") && git push && git push --tags"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.0.0"
+    "@biomejs/biome": "^2.0.0",
+    "@changesets/cli": "^2.30.0"
   }
 }

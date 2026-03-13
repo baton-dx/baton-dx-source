@@ -5,20 +5,20 @@ allowed-tools: Read, Bash, Glob, Grep
 argument-hint: <optional branch name or description>
 ---
 
-# Create Pull Request
+## Create Pull Request
 
 Create a comprehensive, well-documented pull request for the current changes.
 
-## Process
+### Process
 
-### 1. Analyze Changes
+#### 1. Analyze Changes
 
 ```bash
 git diff --stat main...HEAD 2>/dev/null || git diff --stat origin/main...HEAD
 git log --oneline main...HEAD 2>/dev/null || git log --oneline origin/main...HEAD
 ```
 
-### 2. Categorize Changes
+#### 2. Categorize Changes
 
 Group changes into:
 - **Features**: New functionality (adapters, commands, schemas)
@@ -26,7 +26,7 @@ Group changes into:
 - **Refactoring**: Code improvements without behavior change
 - **Chores**: Config, dependencies, tooling
 
-### 3. Generate PR Description
+#### 3. Generate PR Description
 
 ```markdown
 ## Summary
@@ -51,7 +51,7 @@ Brief description of what this PR does and why.
 - [ ] No dead code (`bun run dead-code`)
 ```
 
-### 4. Create the PR
+#### 4. Create the PR
 
 ```bash
 gh pr create --title "<type>: <description>" --body "<generated description>"

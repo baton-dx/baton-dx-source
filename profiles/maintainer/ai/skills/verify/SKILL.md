@@ -4,17 +4,17 @@ description: Pre-commit verification for the baton-dx monorepo. Use when the use
 allowed-tools: Bash, Grep, Glob
 ---
 
-# Pre-Commit Verification
+## Pre-Commit Verification
 
 Run pre-commit checks to ensure the codebase is ready to commit.
 
-## Automated checks
+### Automated checks
 
 1. `bun run typecheck` — TypeScript strict check
 2. `bun run lint` — Biome lint
 3. `bun run test` — Vitest tests
 
-## Manual pattern checks
+### Manual pattern checks
 
 4. Check for `console.log` in library code (`packages/core/`, `packages/agent-paths/`)
 5. Check for `export default` usage anywhere in `packages/`

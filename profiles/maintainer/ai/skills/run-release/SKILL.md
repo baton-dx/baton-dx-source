@@ -5,11 +5,11 @@ allowed-tools: Read, Edit, Bash, Grep, Glob
 argument-hint: <version> (e.g., "0.2.0", "patch", "minor")
 ---
 
-# Release Checklist
+## Release Checklist
 
 Complete release workflow for the Baton monorepo. Follow each step in order.
 
-## Step 1: Pre-Release Validation
+### Step 1: Pre-Release Validation
 
 ```bash
 bun run typecheck
@@ -20,7 +20,7 @@ bun run dead-code
 
 All must pass with zero errors before proceeding.
 
-## Step 2: Determine Version
+### Step 2: Determine Version
 
 Follow Semantic Versioning:
 - **patch** (0.1.x): Bug fixes, no new features
@@ -32,7 +32,7 @@ Check what changed since last release:
 git log --oneline $(git describe --tags --abbrev=0 2>/dev/null || echo HEAD~50)..HEAD
 ```
 
-## Step 3: Update Version Numbers
+### Step 3: Update Version Numbers
 
 Update version in all package.json files:
 - Root `package.json`
@@ -45,7 +45,7 @@ Ensure workspace dependency versions are updated:
 grep -rn "@baton-dx/" packages/*/package.json
 ```
 
-## Step 4: Update CHANGELOG.md
+### Step 4: Update CHANGELOG.md
 
 Move items from `[Unreleased]` to a new version section:
 
@@ -58,7 +58,7 @@ Move items from `[Unreleased]` to a new version section:
 ### Removed
 ```
 
-## Step 5: Build and Verify
+### Step 5: Build and Verify
 
 ```bash
 rm -rf packages/*/dist
@@ -67,7 +67,7 @@ node packages/cli/dist/index.js --version
 node packages/cli/dist/index.js --help
 ```
 
-## Step 6: Commit and Tag
+### Step 6: Commit and Tag
 
 ```bash
 git add package.json packages/*/package.json CHANGELOG.md
@@ -75,13 +75,13 @@ git commit -m "chore: release vX.Y.Z"
 git tag -a vX.Y.Z -m "Release vX.Y.Z"
 ```
 
-## Step 7: Push
+### Step 7: Push
 
 ```bash
 git push origin main --tags
 ```
 
-## Step 8: Publish to npm
+### Step 8: Publish to npm
 
 Publish in dependency order:
 
@@ -91,20 +91,20 @@ cd packages/core && npm publish --access public && cd ../..
 cd packages/cli && npm publish --access public && cd ../..
 ```
 
-## Step 9: Update Homebrew Formula
+### Step 9: Update Homebrew Formula
 
 Update `Formula/baton-dx.rb` with new URL and SHA256:
 ```bash
 curl -sL "https://registry.npmjs.org/@baton-dx/cli/-/cli-X.Y.Z.tgz" | shasum -a 256
 ```
 
-## Step 10: Create GitHub Release
+### Step 10: Create GitHub Release
 
 ```bash
 gh release create vX.Y.Z --title "vX.Y.Z" --notes-file <(sed -n '/## \[X.Y.Z\]/,/## \[/p' CHANGELOG.md | head -n -1)
 ```
 
-## Post-Release Checklist
+### Post-Release Checklist
 
 - [ ] All CI checks pass on the release commit
 - [ ] npm packages are accessible: `npm info @baton-dx/cli`

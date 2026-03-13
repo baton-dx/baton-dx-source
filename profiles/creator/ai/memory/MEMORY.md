@@ -1,8 +1,8 @@
-# Baton DX — Creator Context
+## Baton DX — Creator Context
 
 You are assisting a developer who creates and publishes Baton sources and profiles.
 
-## Profile Structure
+### Profile Structure
 
 ```
 my-profile/
@@ -11,21 +11,23 @@ my-profile/
 │   ├── skills/skill-name/SKILL.md
 │   ├── rules/rule-name.md
 │   ├── agents/agent-name.md
+│   ├── commands/command-name.md
+│   ├── mcp/server-name.yaml
 │   └── memory/MEMORY.md
 ├── files/                    # Non-AI files (.editorconfig, etc.)
 └── ide/                      # IDE settings (vscode/, cursor/)
 ```
 
-## Key Authoring Rules
+### Key Authoring Rules
 
 - Content (skills, rules, agents, memory, files) is auto-discovered from the filesystem — do NOT declare it in the manifest
 - Use `MEMORY.md` as canonical memory filename — Baton transforms it per tool automatically
-- Rules in `ai/rules/` apply to all tools. Rules in `ai/rules/<tool-key>/` are tool-specific
+- Use `<!-- baton:if tool="..." -->` directives for tool-specific content (not tool-key subdirectories)
 - Use `extends` + `weight` for profile inheritance (lower weight = applied first)
-- Use directives (`<!-- baton:if -->`, `<!-- baton:include -->`) for conditional and shared content
+- Use directives (`<!-- baton:if -->`, `<!-- baton:else -->`, `<!-- baton:include -->`) for conditional and shared content
 - Test locally with `file:` transport before publishing
 
-## Publishing
+### Publishing
 
 ```bash
 git tag v1.0.0 && git push origin v1.0.0    # GitHub

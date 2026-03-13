@@ -4,7 +4,7 @@ description: Run full build pipeline for the baton-dx monorepo. Use when the use
 allowed-tools: Bash
 ---
 
-# Build Pipeline
+## Build Pipeline
 
 Run the full build pipeline in order:
 

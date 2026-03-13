@@ -1,6 +1,6 @@
-# Source Conventions
+## Source Conventions
 
-## Manifest Requirements
+### Manifest Requirements
 
 - Source names must be kebab-case (e.g., `my-team-configs`)
 - Profiles are automatically discovered from `profiles/` — do not register them in `baton.source.yaml`
@@ -8,13 +8,13 @@
 - Use valid semver for the `version` field
 - Set the `repository` field for discoverability
 
-## Directory Layout
+### Directory Layout
 
-- Use the conventional structure: `profiles/<name>/ai/{skills,rules,agents,memory}`
+- Use the conventional structure: `profiles/<name>/ai/{skills,rules,agents,memory,mcp,commands}`
 - Keep all profile content inside the `profiles/` directory
 - Do not place profile files at the source root
 
-## Versioning
+### Versioning
 
 - Tag releases in Git with `v` prefix (e.g., `v1.0.0`)
 - Keep `baton.source.yaml` version in sync with the latest Git tag
@@ -24,25 +24,25 @@
   - Bug fix in a rule or config → patch bump
   - Breaking rename or removal → major bump
 
-## Testing and Validation
+### Testing and Validation
 
 - Test profiles locally with `file:` transport before publishing
 - Run `baton source validate` before committing changes
 - Include `baton source validate` in CI if available
 
-## Documentation
+### Documentation
 
 - Include a README.md with usage instructions at the source root
 - Document each profile's purpose and target audience
 - Include example `baton init` commands for each profile
 
-## Publishing
+### Publishing
 
 - For GitHub: push to a repository, consumers use `github:org/repo/profile-name`
 - For npm: publish as a scoped package, consumers use `npm:@org/package/profile-name`
 - For local testing: consumers use `file:../path-to-source/profiles/profile-name`
 
-## Multi-Profile Organization
+### Multi-Profile Organization
 
 - Extract shared config into a `base` profile when multiple profiles share content
 - Use `extends` in child profiles to inherit from base

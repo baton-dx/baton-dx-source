@@ -6,22 +6,5 @@ extends: base
 
 weight: 10
 
-ai:
-  tools:
-    - claude-code
-    - cursor
-    - windsurf
-    - antigravity
-    - codex
-    - github-copilot
-    - opencode
-    - amp
-    - kiro
-    - zed
-    - cline
-    - roo
-    - junie
-    - trae
-
 variables:
   default_transport: "github"

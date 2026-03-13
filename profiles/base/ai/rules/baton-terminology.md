@@ -1,6 +1,6 @@
-# Baton Terminology
+## Baton Terminology
 
-## Naming
+### Naming
 
 - Use "Baton" or "Baton DX" in prose (never "baton-dx" — that is the npm package name)
 - Profile names are kebab-case (e.g., `frontend`, `my-team-backend`)
@@ -8,16 +8,17 @@
 - AI tool keys use the exact canonical keys: `claude-code`, `cursor`, `windsurf`, `antigravity`, `codex`, `github-copilot`, `opencode`, `amp`, `kiro`, `zed`, `cline`, `roo`, `junie`, `trae`
 - Never use camelCase or PascalCase for tool keys (not `claudeCode` or `ClaudeCode`)
 
-## Config Types
+### Config Types
 
-- Always lowercase: skills, rules, agents, memory, mcp
+- Always lowercase: skills, rules, agents, memory, mcp, commands
 - Skills are directories containing a SKILL.md file
 - Rules are .md files (Cursor transforms them to .mdc automatically)
 - Agents are .md files with YAML frontmatter
 - Memory uses the canonical filename MEMORY.md in profiles
-- MCP servers are declared inline in `ai.mcp` (no separate files)
+- MCP servers are YAML files in `ai/mcp/` (one file per server, auto-discovered)
+- Commands are .md files in `ai/commands/`
 
-## MCP Server Terminology
+### MCP Server Terminology
 
 - **transport** — connection type: `stdio`, `http`, or `sse`
 - **command** — executable for `stdio` transport (e.g., `npx`, `uvx`, `node`)
@@ -28,18 +29,18 @@
 - **scope** — `project` or `global`, defaults to `project`
 - **tools** — optional array of tool keys to restrict which AI tools receive the MCP config
 
-## Scopes
+### Scopes
 
 - Use `project` or `global` (not "local", "user", "workspace", or "system")
 
-## Merge Strategies
+### Merge Strategies
 
 - Always lowercase: concat, replace
 - `concat` is the default (appends content across profiles)
 - `replace` means last profile wins
 - Never capitalize or abbreviate merge strategy names
 
-## CLI Commands
+### CLI Commands
 
-- Use the full command form: `baton sync`, `baton init`, `baton profile create`
+- Use the full command form: `baton sync`, `baton init`, `baton profile create`, `baton preview`
 - Do not invent commands that do not exist

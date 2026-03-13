@@ -4,11 +4,11 @@ description: Scaffold a new profile interactively. Use when the user wants to cr
 allowed-tools: Read, Write, Edit, Bash, Glob
 ---
 
-# Create New Profile
+## Create New Profile
 
 Interactively scaffold a new profile in the current source repository.
 
-## Steps
+### Steps
 
 1. Verify we are in a source repository (check for `baton.source.yaml`). If not found, suggest running `baton source create` first.
 

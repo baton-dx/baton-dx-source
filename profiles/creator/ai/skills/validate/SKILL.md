@@ -4,11 +4,11 @@ description: Validate source and profile manifests. Use when the user wants to c
 allowed-tools: Read, Bash, Glob, Grep
 ---
 
-# Validate Baton Source
+## Validate Baton Source
 
 Validate the current source repository and all its profiles.
 
-## Steps
+### Steps
 
 1. Read `baton.source.yaml` and verify:
    - `name` is kebab-case

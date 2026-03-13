@@ -4,11 +4,11 @@ description: Show comprehensive baton project status. Use when the user wants to
 allowed-tools: Read, Bash, Glob
 ---
 
-# Baton Project Status
+## Baton Project Status
 
 Show the current state of baton in this project.
 
-## Steps
+### Steps
 
 1. Check if `baton.yaml` exists. If not, inform the user to run `baton init`.
 

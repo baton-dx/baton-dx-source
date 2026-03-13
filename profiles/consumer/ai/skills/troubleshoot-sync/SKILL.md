@@ -4,11 +4,11 @@ description: Diagnose and fix baton sync issues. Use when sync fails, produces u
 allowed-tools: Read, Bash, Grep, Glob
 ---
 
-# Troubleshoot Baton Sync
+## Troubleshoot Baton Sync
 
 Diagnose and fix issues with `baton sync`.
 
-## Step 1: Run Verbose Dry Run
+### Step 1: Run Verbose Dry Run
 
 ```bash
 baton sync --verbose --dry-run
@@ -16,14 +16,14 @@ baton sync --verbose --dry-run
 
 This shows the full resolution process without writing files. Look for errors or warnings.
 
-## Step 2: Check Common Issues
+### Step 2: Check Common Issues
 
-### Missing `baton.yaml`
+#### Missing `baton.yaml`
 
 **Symptom:** "No baton.yaml found"
 **Fix:** Run `baton init` to create the project manifest.
 
-### Invalid Profile Manifest
+#### Invalid Profile Manifest
 
 **Symptom:** "Failed to parse baton.profile.yaml"
 **Fix:** Check YAML syntax. Common issues:
@@ -32,7 +32,7 @@ This shows the full resolution process without writing files. Look for errors or
 - Missing required fields (name, version)
 - Invalid merge strategy name
 
-### Source Resolution Failure
+#### Source Resolution Failure
 
 **Symptom:** "Failed to resolve source"
 **Fix:**
@@ -41,7 +41,7 @@ This shows the full resolution process without writing files. Look for errors or
 - For GitHub sources, check repo is public or auth is configured
 - For `file:` sources, verify the path exists
 
-### Merge Conflicts
+#### Merge Conflicts
 
 **Symptom:** Files not updating as expected
 **Fix:**
@@ -50,7 +50,7 @@ This shows the full resolution process without writing files. Look for errors or
 - Use `--dry-run` to preview what sync would do
 - Check profile weights if multiple profiles target the same file
 
-### Tool Not Detected
+#### Tool Not Detected
 
 **Symptom:** Configs not placed for a specific tool
 **Fix:**
@@ -58,16 +58,16 @@ This shows the full resolution process without writing files. Look for errors or
 - Check `ai.targets` in `baton.yaml` includes the tool
 - Check `ai.tools` in the profile includes the tool
 
-### Lockfile Issues
+#### Lockfile Issues
 
 **Symptom:** Sync uses stale versions
 **Fix:** Delete `baton.lock` and run `baton sync` to re-resolve and fetch latest.
 
-### MCP Server Issues
+#### MCP Server Issues
 
 **Symptom:** MCP servers not appearing in tool config after sync
 **Fix:**
-- Check that the profile declares `ai.mcp` entries in `baton.profile.yaml`
+- Check that the profile has MCP server files in `ai/mcp/*.yaml`
 - Verify the AI tool is listed in `ai.tools` of the profile
 - If the MCP entry has a `tools` filter, confirm your tool is included
 - Check the target config file for the tool (e.g., `.claude/settings.json` for Claude Code)
@@ -75,7 +75,7 @@ This shows the full resolution process without writing files. Look for errors or
 **Symptom:** MCP server env vars not resolving
 **Fix:** MCP env values use `${VAR}` syntax. The variables must be set in your shell environment — baton passes them through as references, not resolved values.
 
-## Step 3: Validate Manifests
+### Step 3: Validate Manifests
 
 Read and check the project manifest:
 ```bash
@@ -85,14 +85,14 @@ cat baton.lock
 
 Verify: valid source URLs, expected tool targets, no duplicate profile entries.
 
-## Step 4: Check Diffs
+### Step 4: Check Diffs
 
 ```bash
 baton diff
 baton diff --name-only
 ```
 
-## Step 5: Reset and Re-sync
+### Step 5: Reset and Re-sync
 
 If all else fails:
 ```bash

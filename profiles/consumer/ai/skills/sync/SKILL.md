@@ -4,11 +4,11 @@ description: Preview and execute a baton sync. Use when the user wants to sync t
 allowed-tools: Read, Bash
 ---
 
-# Sync Baton Configs
+## Sync Baton Configs
 
 Run a baton sync with preview and verification.
 
-## Steps
+### Steps
 
 1. Preview what will change:
    ```bash

@@ -5,29 +5,29 @@ allowed-tools: Read, Grep, Glob, Bash
 model: opus
 ---
 
-# Comprehensive Code Review
+## Comprehensive Code Review
 
 Run a full project audit combining dead code detection, redundancy analysis, and best practice enforcement for the Baton CLI monorepo.
 
-## Phase 1: Dead Code Analysis
+### Phase 1: Dead Code Analysis
 
 Run `bun run dead-code 2>&1` and parse the results. Then manually check for:
 - Unused adapters, schemas, commands, and utility functions
 - Refer to the find-dead-code skill for the full checklist
 
-## Phase 2: Redundancy Scan
+### Phase 2: Redundancy Scan
 
 Search for duplicate logic, near-identical adapter implementations, and consolidation opportunities.
 - Refer to the find-redundancy skill for patterns to check
 
-## Phase 3: Best Practices & Security
+### Phase 3: Best Practices & Security
 
 Review code against stack conventions:
 - Refer to the review-code skill for the full checklist
 - Check the CLI patterns checklist (`checklists/cli-patterns.md`)
 - Check the core conventions checklist (`checklists/core-conventions.md`)
 
-## Phase 4: Compile Report
+### Phase 4: Compile Report
 
 Save findings to a report file with this structure:
 

@@ -2,23 +2,6 @@ name: "base"
 version: "1.0.0"
 description: "Shared Baton DX knowledge foundation — core concepts, terminology, and conventions. Extend this profile, do not install directly."
 
-ai:
-  tools:
-    - claude-code
-    - cursor
-    - windsurf
-    - antigravity
-    - codex
-    - github-copilot
-    - opencode
-    - amp
-    - kiro
-    - zed
-    - cline
-    - roo
-    - junie
-    - trae
-
 variables:
   baton_version: "1.0.0"
   baton_repo: "https://github.com/baton-dx/baton-dx"

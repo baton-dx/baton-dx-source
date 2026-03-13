@@ -1,39 +1,39 @@
-# Project Conventions
+## Project Conventions
 
-## baton.yaml
+### baton.yaml
 
 - Always commit `baton.yaml` to version control
 - List profiles in priority order (later profiles override earlier ones for equal weight)
 - Set `ai.targets` explicitly to limit which tools get configured
 - Use `overrides` sparingly — prefer adjusting profile weights instead
 
-## Lockfile
+### Lockfile
 
 - Always commit `baton.lock` to version control
 - Run `baton sync` after pulling changes to ensure configs are current
 - Use `baton apply` for deterministic lock-based placement (ideal for CI)
 - Never manually edit `baton.lock`
 
-## Variables
+### Variables
 
 - Override profile variables in `baton.yaml` under `variables`
 - Variable values in the project manifest take precedence over profile defaults
 - Use snake_case for variable names
 
-## Sync Workflow
+### Sync Workflow
 
 - Always preview changes first: `baton sync --dry-run`
 - Review the output before applying
 - After sync, check `baton diff` for any unexpected divergences
 - Commit `baton.lock` after successful sync
 
-## MCP Servers
+### MCP Servers
 
-- Profiles may include MCP server configurations that `baton sync` places into tool-specific config files
+- Profiles may include MCP server configurations in `ai/mcp/*.yaml` files that `baton sync` places into tool-specific config files
 - MCP env values use `${VAR}` references — set the actual values in your local environment
 - Never commit resolved secrets; the `${VAR}` syntax is intentional
 
-## Team Collaboration
+### Team Collaboration
 
 - New team members: clone the repo, run `baton sync` to get all configs (including MCP servers)
 - Profile updates: run `baton sync --dry-run` to preview, then `baton sync`

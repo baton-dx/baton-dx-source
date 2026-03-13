@@ -4,7 +4,7 @@ description: "Official Baton DX source repository — profiles for maintainers, 
 repository: "github:baton-dx/baton-dx-source"
 
 requires:
-  baton-cli: ">=1.0.0-alpha.1"
+  baton-cli: ">=1.0.0"
 
 ai:
   tools:

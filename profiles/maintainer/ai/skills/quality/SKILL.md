@@ -4,7 +4,7 @@ description: Run all quality checks for the baton-dx monorepo. Use when the user
 allowed-tools: Bash
 ---
 
-# Quality Checks
+## Quality Checks
 
 Run all quality checks in order. Stop at the first failure and report errors.
 
