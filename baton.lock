@@ -1,5 +1,5 @@
-baton_version: 1.0.0-alpha.11
-locked_at: 2026-03-13T18:25:16.521Z
+baton_version: 1.0.0-alpha.12
+locked_at: 2026-03-13T19:06:26.923Z
 packages:
   base:
     source: github:baton-dx/baton-dx-source/profiles/base
@@ -8,68 +8,68 @@ packages:
     sha: unknown
     integrity:
       memory/CLAUDE.md:
-        hash: e980baf3889119c8c3067a1ec786472e905d0b6a9ea92860c200669c1d40f3dc
+        hash: c190be0d0e79d4135505318d8c1ce9616a7fe24d986f5f83c24dfc54e5a19b97
         type: memory
       memory/AGENTS.md:
-        hash: e980baf3889119c8c3067a1ec786472e905d0b6a9ea92860c200669c1d40f3dc
+        hash: c190be0d0e79d4135505318d8c1ce9616a7fe24d986f5f83c24dfc54e5a19b97
         type: memory
       memory/GEMINI.md:
-        hash: e980baf3889119c8c3067a1ec786472e905d0b6a9ea92860c200669c1d40f3dc
+        hash: c190be0d0e79d4135505318d8c1ce9616a7fe24d986f5f83c24dfc54e5a19b97
         type: memory
       memory/copilot-instructions.md:
-        hash: a04ca59140a385c8b5ea3102e3b150083fde0679aa7397270e094a338e748d16
+        hash: 9b4691b1fecc8bc1f4191d279284dda35cd90c5ec39353157f0e4a6cb5adc4e6
         type: memory
       rules/baton-terminology:
-        hash: f85930bbe051e8019d7bb2f7841f97ac8217479919d4ca68d934bcdec958e82f
+        hash: 87ff52c24278b6ffaa83c128bbd9fdc76c99271d7b44f858df2c2cf393bee093
         type: rules
       rules/yaml-conventions:
-        hash: ebeb114e5258502d2b9229ce08e0b2af1442e3b28201353c9b440e21fd831b89
+        hash: 3b03375e057f179d9bbd69db740e549906be1d9d3955e55bbc9c072deb3bad8e
         type: rules
   creator:
     source: github:baton-dx/baton-dx-source/profiles/creator
     resolved: github:baton-dx/baton-dx-source/profiles/creator
     version: 1.0.0
-    sha: deadfba8dbc8c447722f09aa96328702b45a47f1
+    sha: 3f3b7144b5ec133f2141d618b314edd288a58e47
     integrity:
       skills/configure-tools:
-        hash: b2679658898e3083707e85a4832fa85a003714c59f7ecef7c284bd51f66c0d09
+        hash: 6d8534206fb13076d7a708cc4d416c5dad442f8995114d18af93b45291bbcb50
         type: skills
       skills/create-profile:
-        hash: d353551b9d04759e85374aecde308c4286663004a8df08e0542b3f48462eca20
+        hash: 9497434bb5d4169901271f72f196deebdafa23cd804aeefc8f2b99cd862a40b1
         type: skills
       skills/create-source:
-        hash: 70e64c5584db48ede3605f05c7d0b4433515bb55b235319be331d84e96f46bdc
+        hash: eeb1b3dac483b39813e406de711bb2c0a5512d3455dbc8ccc6f62beebab8e404
         type: skills
       skills/migrate-config:
-        hash: b34e9fde07c374b54dbd9c796a8b050d19a9e6f85a30ffef3a926f01895e8a91
+        hash: 37a1ee646ec170316f864f501f8b31cec6c4457acedaa8016a5d4dd9474025dd
         type: skills
       skills/scaffold-profile:
-        hash: 5ee8aa2e2441be86074f4cc0760b9eac838276bef2ac6a54988a48c039d01ad7
+        hash: 94550933273c68ff27d5da09052c26025c9e88a1bc4921a3559b75b56e2def10
         type: skills
       skills/validate:
-        hash: c7e79f9d9171777e15c04cb37bb2c368c370f9304ff2f24a2fb6f5ab8113ff7c
+        hash: 0ad4aa914d9ed82719dcfffa6b63ba9658d69de128f88d887a5c4305e5665804
         type: skills
       memory/CLAUDE.md:
-        hash: e980baf3889119c8c3067a1ec786472e905d0b6a9ea92860c200669c1d40f3dc
+        hash: c190be0d0e79d4135505318d8c1ce9616a7fe24d986f5f83c24dfc54e5a19b97
         type: memory
       memory/AGENTS.md:
-        hash: e980baf3889119c8c3067a1ec786472e905d0b6a9ea92860c200669c1d40f3dc
+        hash: c190be0d0e79d4135505318d8c1ce9616a7fe24d986f5f83c24dfc54e5a19b97
         type: memory
       memory/GEMINI.md:
-        hash: e980baf3889119c8c3067a1ec786472e905d0b6a9ea92860c200669c1d40f3dc
+        hash: c190be0d0e79d4135505318d8c1ce9616a7fe24d986f5f83c24dfc54e5a19b97
         type: memory
       memory/copilot-instructions.md:
-        hash: a04ca59140a385c8b5ea3102e3b150083fde0679aa7397270e094a338e748d16
+        hash: 9b4691b1fecc8bc1f4191d279284dda35cd90c5ec39353157f0e4a6cb5adc4e6
         type: memory
       rules/profile-conventions:
-        hash: 6cc17af4682c3d9f5798b8a553c936298303a0f978c6b6b7781410ed2476c607
+        hash: b6749355055692bb70621399c39a4660d7ce6df39dbb30199f70b219a3b525cc
         type: rules
       rules/source-conventions:
-        hash: 3d1b51c97fc14ecdcb78c8d357a151ba8cc57ea67b4c06b139c4eef3b98e3f0b
+        hash: eeac2be9d5e6e87739c1d4e6af2c7f268f1b3d2fcf54a0d4f78d298385b0e9da
         type: rules
       agents/profile-builder:
-        hash: ff5aaacf989744dc268e3d27d2cc64dad1fbe0ee14b403a46f41f21a414b8b64
+        hash: 53b1bde7bdd34c892cdace9367c5628d79ea158731abe36efd5bd7fd8893875d
         type: agents
       agents/source-manager:
-        hash: 248ecfdfc4a814722f0b346f3f9f9ed8553ab66667f90387aa6be5e654537c5f
+        hash: 634503858d9b8826b668bb13655964a0b65bebaa965b16295a2cb271f830ab09
         type: agents
