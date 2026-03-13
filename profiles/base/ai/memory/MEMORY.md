@@ -1,4 +1,4 @@
-## Baton DX (Test)
+## Baton DX
 
 Baton is a CLI package manager for Developer Experience & AI configuration. It manages skills, rules, agents, and memory files as versioned, composable profiles for 14 AI coding tools.
 
