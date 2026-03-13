@@ -1,10 +1,10 @@
 name: "baton-dx-source"
-version: "1.0.2"
+version: "1.0.3"
 description: "Official Baton DX source repository — profiles for maintainers, creators, and consumers of Baton DX"
 repository: "github:baton-dx/baton-dx-source"
 
 requires:
-  baton-cli: ">=1.0.0-alpha.11"
+  baton-cli: ">=1.0.0"
 
 ai:
   tools:
