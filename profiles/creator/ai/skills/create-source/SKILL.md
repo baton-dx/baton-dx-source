@@ -67,13 +67,13 @@ baton source connect github:my-org/my-team-configs --name my-team
 ### Step 7: Version and Tag
 
 ```bash
-git tag v0.1.0
-git push origin v0.1.0
+git tag 0.1.0
+git push origin 0.1.0
 ```
 
 Consumers can pin to this version:
 ```yaml
-source: github:my-org/my-team-configs@v0.1.0/frontend
+source: github:my-org/my-team-configs@0.1.0/frontend
 ```
 
 ### Checklist

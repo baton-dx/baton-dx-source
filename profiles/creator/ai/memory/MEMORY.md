@@ -30,7 +30,7 @@ my-profile/
 ### Publishing
 
 ```bash
-git tag v1.0.0 && git push origin v1.0.0    # GitHub
+git tag 1.0.0 && git push origin 1.0.0    # GitHub
 npm publish --access public                   # npm
 ```
 

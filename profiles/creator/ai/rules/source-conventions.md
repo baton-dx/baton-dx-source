@@ -16,7 +16,7 @@
 
 ### Versioning
 
-- Tag releases in Git with `v` prefix (e.g., `v1.0.0`)
+- Tag releases in Git without prefix (e.g., `1.0.0`)
 - Keep `baton.source.yaml` version in sync with the latest Git tag
 - Follow semver:
   - New profile added → minor bump
